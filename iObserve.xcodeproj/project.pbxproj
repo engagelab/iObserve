@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AEEEE29C135C6B70000C880A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEEE29B135C6B70000C880A /* UIKit.framework */; };
+		AEEEE29E135C6B70000C880A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEEE29D135C6B70000C880A /* Foundation.framework */; };
+		AEEEE2A0135C6B70000C880A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEEE29F135C6B70000C880A /* CoreGraphics.framework */; };
+		AEEEE2A2135C6B70000C880A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEEE2A1135C6B70000C880A /* CoreData.framework */; };
+		AEEEE2A8135C6B70000C880A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AEEEE2A6135C6B70000C880A /* InfoPlist.strings */; };
+		AEEEE2AB135C6B70000C880A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEEE2AA135C6B70000C880A /* main.m */; };
+		AEEEE2AE135C6B70000C880A /* iObserveAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEEE2AD135C6B70000C880A /* iObserveAppDelegate.m */; };
+		AEEEE2B1135C6B70000C880A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEEEE2AF135C6B70000C880A /* MainWindow.xib */; };
+		AEEEE2B4135C6B70000C880A /* iObserve.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AEEEE2B2135C6B70000C880A /* iObserve.xcdatamodeld */; };
+		AEEEE2BB135C6B71000C880A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEEE29B135C6B70000C880A /* UIKit.framework */; };
+		AEEEE2BC135C6B71000C880A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEEE29D135C6B70000C880A /* Foundation.framework */; };
+		AEEEE2BD135C6B71000C880A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEEE29F135C6B70000C880A /* CoreGraphics.framework */; };
+		AEEEE2BE135C6B71000C880A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEEE2A1135C6B70000C880A /* CoreData.framework */; };
+		AEEEE2C6135C6B71000C880A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AEEEE2C4135C6B71000C880A /* InfoPlist.strings */; };
+		AEEEE2C9135C6B71000C880A /* iObserveTests.h in Resources */ = {isa = PBXBuildFile; fileRef = AEEEE2C8135C6B71000C880A /* iObserveTests.h */; };
+		AEEEE2CB135C6B71000C880A /* iObserveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEEE2CA135C6B71000C880A /* iObserveTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AEEEE2BF135C6B71000C880A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AEEEE28E135C6B70000C880A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AEEEE296135C6B70000C880A;
+			remoteInfo = iObserve;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AEEEE297135C6B70000C880A /* iObserve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iObserve.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEEEE29B135C6B70000C880A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AEEEE29D135C6B70000C880A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AEEEE29F135C6B70000C880A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AEEEE2A1135C6B70000C880A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AEEEE2A5135C6B70000C880A /* iObserve-Info.plist */ = {isa = PBXFileReference; path = "iObserve-Info.plist"; sourceTree = "<group>"; };
+		AEEEE2A7135C6B70000C880A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AEEEE2A9135C6B70000C880A /* iObserve-Prefix.pch */ = {isa = PBXFileReference; path = "iObserve-Prefix.pch"; sourceTree = "<group>"; };
+		AEEEE2AA135C6B70000C880A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AEEEE2AC135C6B70000C880A /* iObserveAppDelegate.h */ = {isa = PBXFileReference; path = iObserveAppDelegate.h; sourceTree = "<group>"; };
+		AEEEE2AD135C6B70000C880A /* iObserveAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iObserveAppDelegate.m; sourceTree = "<group>"; };
+		AEEEE2B0135C6B70000C880A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		AEEEE2B3135C6B70000C880A /* iObserve.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iObserve.xcdatamodel; sourceTree = "<group>"; };
+		AEEEE2BA135C6B71000C880A /* iObserveTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iObserveTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEEEE2C3135C6B71000C880A /* iObserveTests-Info.plist */ = {isa = PBXFileReference; path = "iObserveTests-Info.plist"; sourceTree = "<group>"; };
+		AEEEE2C5135C6B71000C880A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AEEEE2C7135C6B71000C880A /* iObserveTests-Prefix.pch */ = {isa = PBXFileReference; path = "iObserveTests-Prefix.pch"; sourceTree = "<group>"; };
+		AEEEE2C8135C6B71000C880A /* iObserveTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iObserveTests.h; sourceTree = "<group>"; };
+		AEEEE2CA135C6B71000C880A /* iObserveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iObserveTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AEEEE294135C6B70000C880A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEEEE29C135C6B70000C880A /* UIKit.framework in Frameworks */,
+				AEEEE29E135C6B70000C880A /* Foundation.framework in Frameworks */,
+				AEEEE2A0135C6B70000C880A /* CoreGraphics.framework in Frameworks */,
+				AEEEE2A2135C6B70000C880A /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEEEE2B6135C6B71000C880A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEEEE2BB135C6B71000C880A /* UIKit.framework in Frameworks */,
+				AEEEE2BC135C6B71000C880A /* Foundation.framework in Frameworks */,
+				AEEEE2BD135C6B71000C880A /* CoreGraphics.framework in Frameworks */,
+				AEEEE2BE135C6B71000C880A /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AEEEE28C135C6B70000C880A = {
+			isa = PBXGroup;
+			children = (
+				AEEEE2A3135C6B70000C880A /* iObserve */,
+				AEEEE2C1135C6B71000C880A /* iObserveTests */,
+				AEEEE29A135C6B70000C880A /* Frameworks */,
+				AEEEE298135C6B70000C880A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AEEEE298135C6B70000C880A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEEEE297135C6B70000C880A /* iObserve.app */,
+				AEEEE2BA135C6B71000C880A /* iObserveTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AEEEE29A135C6B70000C880A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AEEEE29B135C6B70000C880A /* UIKit.framework */,
+				AEEEE29D135C6B70000C880A /* Foundation.framework */,
+				AEEEE29F135C6B70000C880A /* CoreGraphics.framework */,
+				AEEEE2A1135C6B70000C880A /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AEEEE2A3135C6B70000C880A /* iObserve */ = {
+			isa = PBXGroup;
+			children = (
+				AEEEE2AC135C6B70000C880A /* iObserveAppDelegate.h */,
+				AEEEE2AD135C6B70000C880A /* iObserveAppDelegate.m */,
+				AEEEE2AF135C6B70000C880A /* MainWindow.xib */,
+				AEEEE2B2135C6B70000C880A /* iObserve.xcdatamodeld */,
+				AEEEE2A4135C6B70000C880A /* Supporting Files */,
+			);
+			path = iObserve;
+			sourceTree = "<group>";
+		};
+		AEEEE2A4135C6B70000C880A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AEEEE2A5135C6B70000C880A /* iObserve-Info.plist */,
+				AEEEE2A6135C6B70000C880A /* InfoPlist.strings */,
+				AEEEE2A9135C6B70000C880A /* iObserve-Prefix.pch */,
+				AEEEE2AA135C6B70000C880A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AEEEE2C1135C6B71000C880A /* iObserveTests */ = {
+			isa = PBXGroup;
+			children = (
+				AEEEE2C8135C6B71000C880A /* iObserveTests.h */,
+				AEEEE2CA135C6B71000C880A /* iObserveTests.m */,
+				AEEEE2C2135C6B71000C880A /* Supporting Files */,
+			);
+			path = iObserveTests;
+			sourceTree = "<group>";
+		};
+		AEEEE2C2135C6B71000C880A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AEEEE2C3135C6B71000C880A /* iObserveTests-Info.plist */,
+				AEEEE2C4135C6B71000C880A /* InfoPlist.strings */,
+				AEEEE2C7135C6B71000C880A /* iObserveTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AEEEE296135C6B70000C880A /* iObserve */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEEEE2CE135C6B71000C880A /* Build configuration list for PBXNativeTarget "iObserve" */;
+			buildPhases = (
+				AEEEE293135C6B70000C880A /* Sources */,
+				AEEEE294135C6B70000C880A /* Frameworks */,
+				AEEEE295135C6B70000C880A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iObserve;
+			productName = iObserve;
+			productReference = AEEEE297135C6B70000C880A /* iObserve.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AEEEE2B9135C6B71000C880A /* iObserveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEEEE2D1135C6B71000C880A /* Build configuration list for PBXNativeTarget "iObserveTests" */;
+			buildPhases = (
+				AEEEE2B5135C6B71000C880A /* Sources */,
+				AEEEE2B6135C6B71000C880A /* Frameworks */,
+				AEEEE2B7135C6B71000C880A /* Resources */,
+				AEEEE2B8135C6B71000C880A /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AEEEE2C0135C6B71000C880A /* PBXTargetDependency */,
+			);
+			name = iObserveTests;
+			productName = iObserveTests;
+			productReference = AEEEE2BA135C6B71000C880A /* iObserveTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AEEEE28E135C6B70000C880A /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = AEEEE291135C6B70000C880A /* Build configuration list for PBXProject "iObserve" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AEEEE28C135C6B70000C880A;
+			productRefGroup = AEEEE298135C6B70000C880A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AEEEE296135C6B70000C880A /* iObserve */,
+				AEEEE2B9135C6B71000C880A /* iObserveTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AEEEE295135C6B70000C880A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEEEE2A8135C6B70000C880A /* InfoPlist.strings in Resources */,
+				AEEEE2B1135C6B70000C880A /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEEEE2B7135C6B71000C880A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEEEE2C6135C6B71000C880A /* InfoPlist.strings in Resources */,
+				AEEEE2C9135C6B71000C880A /* iObserveTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AEEEE2B8135C6B71000C880A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AEEEE293135C6B70000C880A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEEEE2AB135C6B70000C880A /* main.m in Sources */,
+				AEEEE2AE135C6B70000C880A /* iObserveAppDelegate.m in Sources */,
+				AEEEE2B4135C6B70000C880A /* iObserve.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEEEE2B5135C6B71000C880A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEEEE2CB135C6B71000C880A /* iObserveTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AEEEE2C0135C6B71000C880A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AEEEE296135C6B70000C880A /* iObserve */;
+			targetProxy = AEEEE2BF135C6B71000C880A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AEEEE2A6135C6B70000C880A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AEEEE2A7135C6B70000C880A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AEEEE2AF135C6B70000C880A /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AEEEE2B0135C6B70000C880A /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		AEEEE2C4135C6B71000C880A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AEEEE2C5135C6B71000C880A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AEEEE2CC135C6B71000C880A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		AEEEE2CD135C6B71000C880A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		AEEEE2CF135C6B71000C880A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iObserve/iObserve-Prefix.pch";
+				INFOPLIST_FILE = "iObserve/iObserve-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AEEEE2D0135C6B71000C880A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iObserve/iObserve-Prefix.pch";
+				INFOPLIST_FILE = "iObserve/iObserve-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		AEEEE2D2135C6B71000C880A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iObserve.app/iObserve";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iObserveTests/iObserveTests-Prefix.pch";
+				INFOPLIST_FILE = "iObserveTests/iObserveTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		AEEEE2D3135C6B71000C880A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iObserve.app/iObserve";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iObserveTests/iObserveTests-Prefix.pch";
+				INFOPLIST_FILE = "iObserveTests/iObserveTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AEEEE291135C6B70000C880A /* Build configuration list for PBXProject "iObserve" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEEEE2CC135C6B71000C880A /* Debug */,
+				AEEEE2CD135C6B71000C880A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEEEE2CE135C6B71000C880A /* Build configuration list for PBXNativeTarget "iObserve" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEEEE2CF135C6B71000C880A /* Debug */,
+				AEEEE2D0135C6B71000C880A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AEEEE2D1135C6B71000C880A /* Build configuration list for PBXNativeTarget "iObserveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEEEE2D2135C6B71000C880A /* Debug */,
+				AEEEE2D3135C6B71000C880A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AEEEE2B2135C6B70000C880A /* iObserve.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AEEEE2B3135C6B70000C880A /* iObserve.xcdatamodel */,
+			);
+			currentVersion = AEEEE2B3135C6B70000C880A /* iObserve.xcdatamodel */;
+			path = iObserve.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AEEEE28E135C6B70000C880A /* Project object */;
+}
