@@ -3,6 +3,7 @@
 //
 
 #import <Availability.h>
+#import <Three20/Three20.h>
 
 #ifndef __IPHONE_3_0
 #warning "This project uses features only available in iPhone SDK 3.0 and later."
@@ -12,4 +13,5 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
+    #import <Three20/Three20+Additions.h>
 #endif

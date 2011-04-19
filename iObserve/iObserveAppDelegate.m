@@ -3,7 +3,7 @@
 //  iObserve
 //
 //  Created by Anthony John Perritano on 4/18/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 InterMedia. All rights reserved.
 //
 
 #import "iObserveAppDelegate.h"
@@ -13,6 +13,8 @@
 
 @synthesize window=_window;
 
+@synthesize navigationController  = _navigationController;
+
 @synthesize managedObjectContext=__managedObjectContext;
 
 @synthesize managedObjectModel=__managedObjectModel;
@@ -21,8 +23,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    [self.window makeKeyAndVisible];
+    TTNavigator* navigator = [TTNavigator navigator];
+    navigator.supportsShakeToReload = YES;
+    navigator.persistenceMode = TTNavigatorPersistenceModeAll;
+    navigator.window = self.window;
+    
+    //[TTStyleSheet setGlobalStyleSheet:[[[StyleSheet alloc] init] autorelease]];
+    
+    TTURLMap* map = navigator.URLMap;
+    [map from:@"*" toViewController:[TTWebController class]];
+    [map from:@"tt://root" toViewController:NSClassFromString(@"RootViewController")];
+    [map from:@"tt://nib/(loadFromNib:)" toSharedViewController:self];
+    [map from:@"tt://nib/(loadFromNib:)/(withClass:)" toSharedViewController:self];
+    [map from:@"tt://viewController/(loadFromVC:)" toSharedViewController:self];
+    [map from:@"tt://modal/(loadFromNib:)" toModalViewController:self];
+    
+    if (![navigator restoreViewControllers]) {
+        [navigator openURLAction:[TTURLAction actionWithURLPath:@"tt://root"]];
+    }
+    //[self.window makeKeyAndVisible];
     return YES;
 }
 
@@ -68,6 +87,8 @@
     [__managedObjectContext release];
     [__managedObjectModel release];
     [__persistentStoreCoordinator release];
+    TT_RELEASE_SAFELY(_navigationController);
+    TT_RELEASE_SAFELY(_window);
     [super dealloc];
 }
 
@@ -191,5 +212,48 @@
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Loads the given viewcontroller from the nib
+ */
+- (UIViewController*)loadFromNib:(NSString *)nibName withClass:className {
+    UIViewController* newController = [[NSClassFromString(className) alloc]
+                                       initWithNibName:nibName bundle:nil];
+    [newController autorelease];
+    
+    return newController;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Loads the given viewcontroller from the the nib with the same name as the
+ * class
+ */
+- (UIViewController*)loadFromNib:(NSString*)className {
+    return [self loadFromNib:className withClass:className];
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Loads the given viewcontroller by name
+ */
+- (UIViewController *)loadFromVC:(NSString *)className {
+    UIViewController * newController = [[ NSClassFromString(className) alloc] init];
+    [newController autorelease];
+    
+    return newController;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (BOOL)application:(UIApplication*)application handleOpenURL:(NSURL*)URL {
+    [[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:URL.absoluteString]];
+    return YES;
+}
+
 
 @end
