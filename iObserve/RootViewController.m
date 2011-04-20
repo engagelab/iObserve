@@ -3,11 +3,12 @@
 #import "RootViewController.h"
 #import "TransparentToolbar.h"
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////
 @implementation RootViewController
 
+@synthesize label = _label;
+@synthesize button = _button;
+
+int clicked = 0;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 -(id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)bundle {
@@ -26,6 +27,12 @@
   return self;
 }
 
+- (IBOutlet) buttonClicked:(id) sender {
+    ++clicked;
+    
+    _label.text = [[NSNumber numberWithInt:clicked] stringValue];
+    
+}
 -(void)makeLeftButtonBarItems {
     
     // create a toolbar where we can place some buttons
@@ -112,8 +119,14 @@
     
 }
 
-
-
+- (void) loadView
+{
+    [super loadView];
+    
+    // load automatically the NIB
+    [[NSBundle mainBundle] loadNibNamed: NSStringFromClass([self class]) owner: self options: nil];
+}
+/*
 - (void)loadView {
     self.view = [[[UIView alloc] init] autorelease];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -124,6 +137,7 @@
     imageView.urlPath = @"http://farm4.static.flickr.com/3163/3110335722_7a906f9d8b_m.jpg";
     [self.view addSubview:imageView];
 }
+ */
 
 - (void)dealloc {
 	[super dealloc];

@@ -16,6 +16,7 @@
 		320CC833B8AF0ACFD35E6225 /* libThree20Style.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320CC833B8AF0ACFD35E6224 /* libThree20Style.a */; };
 		320D7DCCE32703ACAB9A45E5 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320D7DCCE32703ACAB9A45E4 /* libThree20.a */; };
 		320F2C48872C2E2C4DF86205 /* libThree20UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320F2C48872C2E2C4DF86204 /* libThree20UI.a */; };
+		AE0C3696135EDF2C0091608A /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE0C3695135EDF2C0091608A /* RootViewController.xib */; };
 		AE1E3C74135E256D00C9643A /* TransparentToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1E3C73135E256D00C9643A /* TransparentToolbar.m */; };
 		AE70E519135DB3F900C05955 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE70E518135DB3F900C05955 /* RootViewController.m */; };
 		AE70E51C135DB52000C05955 /* ImageTest1Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = AE70E51B135DB52000C05955 /* ImageTest1Controller.m */; };
@@ -204,6 +205,7 @@
 		320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Style.xcodeproj; path = ../three20/src/Three20Style/Three20Style.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = ../three20/src/Three20/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UI.xcodeproj; path = ../three20/src/Three20UI/Three20UI.xcodeproj; sourceTree = SOURCE_ROOT; };
+		AE0C3695135EDF2C0091608A /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		AE1E3C72135E256D00C9643A /* TransparentToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransparentToolbar.h; sourceTree = "<group>"; };
 		AE1E3C73135E256D00C9643A /* TransparentToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransparentToolbar.m; sourceTree = "<group>"; };
 		AE70E517135DB3F900C05955 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
@@ -328,6 +330,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		AED6C937135EE9AC0078AA98 /* nibs */ = {
+			isa = PBXGroup;
+			children = (
+				AE0C3695135EDF2C0091608A /* RootViewController.xib */,
+				AEEEE2AF135C6B70000C880A /* MainWindow.xib */,
+			);
+			name = nibs;
+			sourceTree = "<group>";
+		};
+		AED6C938135EE9C10078AA98 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				AE1E3C72135E256D00C9643A /* TransparentToolbar.h */,
+				AE1E3C73135E256D00C9643A /* TransparentToolbar.m */,
+			);
+			name = ui;
+			sourceTree = "<group>";
+		};
 		AEEEE28C135C6B70000C880A = {
 			isa = PBXGroup;
 			children = (
@@ -369,15 +389,14 @@
 		AEEEE2A3135C6B70000C880A /* iObserve */ = {
 			isa = PBXGroup;
 			children = (
+				AED6C938135EE9C10078AA98 /* ui */,
+				AED6C937135EE9AC0078AA98 /* nibs */,
 				AE70E51A135DB52000C05955 /* ImageTest1Controller.h */,
 				AE70E51B135DB52000C05955 /* ImageTest1Controller.m */,
 				AE70E517135DB3F900C05955 /* RootViewController.h */,
 				AE70E518135DB3F900C05955 /* RootViewController.m */,
 				AEEEE2AC135C6B70000C880A /* iObserveAppDelegate.h */,
 				AEEEE2AD135C6B70000C880A /* iObserveAppDelegate.m */,
-				AE1E3C72135E256D00C9643A /* TransparentToolbar.h */,
-				AE1E3C73135E256D00C9643A /* TransparentToolbar.m */,
-				AEEEE2AF135C6B70000C880A /* MainWindow.xib */,
 				AEEEE2B2135C6B70000C880A /* iObserve.xcdatamodeld */,
 				AEEEE2A4135C6B70000C880A /* Supporting Files */,
 			);
@@ -624,6 +643,7 @@
 				320B6C86F11D9990244A9731 /* Three20.bundle in Resources */,
 				AEEEE2A8135C6B70000C880A /* InfoPlist.strings in Resources */,
 				AEEEE2B1135C6B70000C880A /* MainWindow.xib in Resources */,
+				AE0C3696135EDF2C0091608A /* RootViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

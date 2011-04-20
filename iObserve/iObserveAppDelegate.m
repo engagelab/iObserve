@@ -10,6 +10,7 @@
 
 @implementation iObserveAppDelegate
 
+@synthesize newView;
 
 @synthesize window=_window;
 
@@ -27,6 +28,7 @@
     navigator.supportsShakeToReload = YES;
     navigator.persistenceMode = TTNavigatorPersistenceModeAll;
     navigator.window = self.window;
+    [navigator.window addSubview:newView];
     
     //[TTStyleSheet setGlobalStyleSheet:[[[StyleSheet alloc] init] autorelease]];
     

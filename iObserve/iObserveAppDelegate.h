@@ -11,10 +11,12 @@
 @interface iObserveAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow*               _window;
     UINavigationController* _navigationController;
+    UIView*                 newView;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet  UINavigationController*  navigationController;
+@property (nonatomic, retain) IBOutlet  UIView*  newView;
 
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
