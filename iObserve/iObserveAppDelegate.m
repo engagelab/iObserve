@@ -7,14 +7,11 @@
 //
 
 #import "iObserveAppDelegate.h"
+#import "DKDragDropServer.h"
+#import "RootViewController.h"
+#import "TableItemTestController.h"
 
 @implementation iObserveAppDelegate
-
-@synthesize newView;
-
-@synthesize window=_window;
-
-@synthesize navigationController  = _navigationController;
 
 @synthesize managedObjectContext=__managedObjectContext;
 
@@ -27,23 +24,37 @@
     TTNavigator* navigator = [TTNavigator navigator];
     navigator.supportsShakeToReload = YES;
     navigator.persistenceMode = TTNavigatorPersistenceModeAll;
-    navigator.window = self.window;
-    [navigator.window addSubview:newView];
     
     //[TTStyleSheet setGlobalStyleSheet:[[[StyleSheet alloc] init] autorelease]];
     
     TTURLMap* map = navigator.URLMap;
+    
     [map from:@"*" toViewController:[TTWebController class]];
-    [map from:@"tt://root" toViewController:NSClassFromString(@"RootViewController")];
+    [map from:@"tt://root" toViewController:[RootViewController class]];
+    [map from:@"tt://root/(loadFromNib:)" toSharedViewController:self];
     [map from:@"tt://nib/(loadFromNib:)" toSharedViewController:self];
     [map from:@"tt://nib/(loadFromNib:)/(withClass:)" toSharedViewController:self];
     [map from:@"tt://viewController/(loadFromVC:)" toSharedViewController:self];
     [map from:@"tt://modal/(loadFromNib:)" toModalViewController:self];
+    [map from:@"tt://pin" toViewController:[TableItemTestController class]];
     
-    if (![navigator restoreViewControllers]) {
+    _rootViewController = [[TTRootViewController alloc] init];
+    [[TTNavigator navigator].window addSubview:_rootViewController.view];
+    [TTNavigator navigator].rootContainer = _rootViewController;
+    
+    if (TTIsPad() || ![navigator restoreViewControllers]) {
         [navigator openURLAction:[TTURLAction actionWithURLPath:@"tt://root"]];
     }
-    //[self.window makeKeyAndVisible];
+    
+    [_rootViewController showController: navigator.rootViewController
+                             transition: UIViewAnimationTransitionNone
+                               animated: NO];
+    
+    [navigator.window makeKeyWindow];
+    
+    // must be done after the window is key.
+	[[DKDragDropServer sharedServer] registerApplicationWithTypes:[NSArray arrayWithObject:@"public.text"]];
+
     return YES;
 }
 
@@ -79,18 +90,16 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    TT_RELEASE_SAFELY(_rootViewController);
+
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
 }
 
-- (void)dealloc
-{
-    [_window release];
+- (void)dealloc {
     [__managedObjectContext release];
     [__managedObjectModel release];
     [__persistentStoreCoordinator release];
-    TT_RELEASE_SAFELY(_navigationController);
-    TT_RELEASE_SAFELY(_window);
     [super dealloc];
 }
 
@@ -98,7 +107,7 @@
 {
     /*
      Typically you should set up the Core Data stack here, usually by passing the managed object context to the first view controller.
-     self.<#View controller#>.managedObjectContext = self.managedObjectContext;
+     self.View controller.managedObjectContext = self.managedObjectContext;
     */
 }
 

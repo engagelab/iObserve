@@ -16,10 +16,17 @@
 		320CC833B8AF0ACFD35E6225 /* libThree20Style.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320CC833B8AF0ACFD35E6224 /* libThree20Style.a */; };
 		320D7DCCE32703ACAB9A45E5 /* libThree20.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320D7DCCE32703ACAB9A45E4 /* libThree20.a */; };
 		320F2C48872C2E2C4DF86205 /* libThree20UI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 320F2C48872C2E2C4DF86204 /* libThree20UI.a */; };
+		AE0839041376D6BC00D7AEBA /* TableItemTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0839031376D6BC00D7AEBA /* TableItemTestController.m */; };
 		AE0C3696135EDF2C0091608A /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE0C3695135EDF2C0091608A /* RootViewController.xib */; };
 		AE1E3C74135E256D00C9643A /* TransparentToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1E3C73135E256D00C9643A /* TransparentToolbar.m */; };
 		AE70E519135DB3F900C05955 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE70E518135DB3F900C05955 /* RootViewController.m */; };
-		AE70E51C135DB52000C05955 /* ImageTest1Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = AE70E51B135DB52000C05955 /* ImageTest1Controller.m */; };
+		AEC08E221372B32100BB0B9B /* room-map.png in Resources */ = {isa = PBXBuildFile; fileRef = AEC08E211372B32100BB0B9B /* room-map.png */; };
+		AEC08E581372CC9A00BB0B9B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC08E571372CC9A00BB0B9B /* MobileCoreServices.framework */; };
+		AEC08E5A1372CCA200BB0B9B /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC08E591372CCA200BB0B9B /* GameKit.framework */; };
+		AEC08E61137324AE00BB0B9B /* DKApplicationRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC08E5C137324AE00BB0B9B /* DKApplicationRegistration.m */; };
+		AEC08E62137324AE00BB0B9B /* DKDragDropServer.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC08E5E137324AE00BB0B9B /* DKDragDropServer.m */; };
+		AEC08E63137324AE00BB0B9B /* drag_default.png in Resources */ = {isa = PBXBuildFile; fileRef = AEC08E5F137324AE00BB0B9B /* drag_default.png */; };
+		AEC08E64137324AE00BB0B9B /* drag_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = AEC08E60137324AE00BB0B9B /* drag_overlay.png */; };
 		AEEEE29C135C6B70000C880A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEEE29B135C6B70000C880A /* UIKit.framework */; };
 		AEEEE29E135C6B70000C880A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEEE29D135C6B70000C880A /* Foundation.framework */; };
 		AEEEE2A0135C6B70000C880A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEEE29F135C6B70000C880A /* CoreGraphics.framework */; };
@@ -205,13 +212,22 @@
 		320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20Style.xcodeproj; path = ../three20/src/Three20Style/Three20Style.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320D7DCCE32703ACAB9A45E0 /* Three20.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20.xcodeproj; path = ../three20/src/Three20/Three20.xcodeproj; sourceTree = SOURCE_ROOT; };
 		320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Three20UI.xcodeproj; path = ../three20/src/Three20UI/Three20UI.xcodeproj; sourceTree = SOURCE_ROOT; };
+		AE0839021376D6BC00D7AEBA /* TableItemTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableItemTestController.h; path = ../../three20/samples/TTCatalog/Classes/TableItemTestController.h; sourceTree = "<group>"; };
+		AE0839031376D6BC00D7AEBA /* TableItemTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableItemTestController.m; path = ../../three20/samples/TTCatalog/Classes/TableItemTestController.m; sourceTree = "<group>"; };
 		AE0C3695135EDF2C0091608A /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		AE1E3C72135E256D00C9643A /* TransparentToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransparentToolbar.h; sourceTree = "<group>"; };
 		AE1E3C73135E256D00C9643A /* TransparentToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransparentToolbar.m; sourceTree = "<group>"; };
 		AE70E517135DB3F900C05955 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		AE70E518135DB3F900C05955 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		AE70E51A135DB52000C05955 /* ImageTest1Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTest1Controller.h; sourceTree = "<group>"; };
-		AE70E51B135DB52000C05955 /* ImageTest1Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTest1Controller.m; sourceTree = "<group>"; };
+		AEC08E211372B32100BB0B9B /* room-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "room-map.png"; sourceTree = "<group>"; };
+		AEC08E571372CC9A00BB0B9B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		AEC08E591372CCA200BB0B9B /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		AEC08E5B137324AE00BB0B9B /* DKApplicationRegistration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKApplicationRegistration.h; sourceTree = "<group>"; };
+		AEC08E5C137324AE00BB0B9B /* DKApplicationRegistration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKApplicationRegistration.m; sourceTree = "<group>"; };
+		AEC08E5D137324AE00BB0B9B /* DKDragDropServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKDragDropServer.h; sourceTree = "<group>"; };
+		AEC08E5E137324AE00BB0B9B /* DKDragDropServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKDragDropServer.m; sourceTree = "<group>"; };
+		AEC08E5F137324AE00BB0B9B /* drag_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drag_default.png; sourceTree = "<group>"; };
+		AEC08E60137324AE00BB0B9B /* drag_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drag_overlay.png; sourceTree = "<group>"; };
 		AEEEE297135C6B70000C880A /* iObserve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iObserve.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEEEE29B135C6B70000C880A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AEEEE29D135C6B70000C880A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -238,6 +254,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEC08E5A1372CCA200BB0B9B /* GameKit.framework in Frameworks */,
+				AEC08E581372CC9A00BB0B9B /* MobileCoreServices.framework in Frameworks */,
 				3201088596B4756681693705 /* libThree20UICommon.a in Frameworks */,
 				320D7DCCE32703ACAB9A45E5 /* libThree20.a in Frameworks */,
 				320A737074758E53BA54BE95 /* libThree20UINavigator.a in Frameworks */,
@@ -330,6 +348,47 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		AE0839051376D6D100D7AEBA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AE70E517135DB3F900C05955 /* RootViewController.h */,
+				AE70E518135DB3F900C05955 /* RootViewController.m */,
+				AE0839021376D6BC00D7AEBA /* TableItemTestController.h */,
+				AE0839031376D6BC00D7AEBA /* TableItemTestController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		AE507C82137609840027C58D /* Toolbar */ = {
+			isa = PBXGroup;
+			children = (
+				AE1E3C72135E256D00C9643A /* TransparentToolbar.h */,
+				AE1E3C73135E256D00C9643A /* TransparentToolbar.m */,
+			);
+			name = Toolbar;
+			sourceTree = "<group>";
+		};
+		AEC08E1E1372B0FE00BB0B9B /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				AEC08E211372B32100BB0B9B /* room-map.png */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
+		AEC08E65137324B200BB0B9B /* Dragkit */ = {
+			isa = PBXGroup;
+			children = (
+				AEC08E5B137324AE00BB0B9B /* DKApplicationRegistration.h */,
+				AEC08E5C137324AE00BB0B9B /* DKApplicationRegistration.m */,
+				AEC08E5D137324AE00BB0B9B /* DKDragDropServer.h */,
+				AEC08E5E137324AE00BB0B9B /* DKDragDropServer.m */,
+				AEC08E5F137324AE00BB0B9B /* drag_default.png */,
+				AEC08E60137324AE00BB0B9B /* drag_overlay.png */,
+			);
+			name = Dragkit;
+			sourceTree = "<group>";
+		};
 		AED6C937135EE9AC0078AA98 /* nibs */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,8 +401,8 @@
 		AED6C938135EE9C10078AA98 /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				AE1E3C72135E256D00C9643A /* TransparentToolbar.h */,
-				AE1E3C73135E256D00C9643A /* TransparentToolbar.m */,
+				AE507C82137609840027C58D /* Toolbar */,
+				AEC08E65137324B200BB0B9B /* Dragkit */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -375,10 +434,12 @@
 				320A737074758E53BA54BE90 /* Three20UINavigator.xcodeproj */,
 				320A2827FEC940B25BC42C60 /* Three20Core.xcodeproj */,
 				320F2C48872C2E2C4DF86200 /* Three20UI.xcodeproj */,
-				320AF8492C47A4D819F7C450 /* QuartzCore.framework */,
 				320A5A189C235877202780D0 /* Three20Network.xcodeproj */,
 				320CC833B8AF0ACFD35E6220 /* Three20Style.xcodeproj */,
 				AEEEE29B135C6B70000C880A /* UIKit.framework */,
+				320AF8492C47A4D819F7C450 /* QuartzCore.framework */,
+				AEC08E591372CCA200BB0B9B /* GameKit.framework */,
+				AEC08E571372CC9A00BB0B9B /* MobileCoreServices.framework */,
 				AEEEE29D135C6B70000C880A /* Foundation.framework */,
 				AEEEE29F135C6B70000C880A /* CoreGraphics.framework */,
 				AEEEE2A1135C6B70000C880A /* CoreData.framework */,
@@ -389,15 +450,11 @@
 		AEEEE2A3135C6B70000C880A /* iObserve */ = {
 			isa = PBXGroup;
 			children = (
+				AE0839051376D6D100D7AEBA /* Controllers */,
 				AED6C938135EE9C10078AA98 /* ui */,
 				AED6C937135EE9AC0078AA98 /* nibs */,
-				AE70E51A135DB52000C05955 /* ImageTest1Controller.h */,
-				AE70E51B135DB52000C05955 /* ImageTest1Controller.m */,
-				AE70E517135DB3F900C05955 /* RootViewController.h */,
-				AE70E518135DB3F900C05955 /* RootViewController.m */,
 				AEEEE2AC135C6B70000C880A /* iObserveAppDelegate.h */,
 				AEEEE2AD135C6B70000C880A /* iObserveAppDelegate.m */,
-				AEEEE2B2135C6B70000C880A /* iObserve.xcdatamodeld */,
 				AEEEE2A4135C6B70000C880A /* Supporting Files */,
 			);
 			path = iObserve;
@@ -406,6 +463,8 @@
 		AEEEE2A4135C6B70000C880A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AEC08E1E1372B0FE00BB0B9B /* resources */,
+				AEEEE2B2135C6B70000C880A /* iObserve.xcdatamodeld */,
 				320B6C86F11D9990244A9730 /* Three20.bundle */,
 				AEEEE2A5135C6B70000C880A /* iObserve-Info.plist */,
 				AEEEE2A6135C6B70000C880A /* InfoPlist.strings */,
@@ -644,6 +703,9 @@
 				AEEEE2A8135C6B70000C880A /* InfoPlist.strings in Resources */,
 				AEEEE2B1135C6B70000C880A /* MainWindow.xib in Resources */,
 				AE0C3696135EDF2C0091608A /* RootViewController.xib in Resources */,
+				AEC08E221372B32100BB0B9B /* room-map.png in Resources */,
+				AEC08E63137324AE00BB0B9B /* drag_default.png in Resources */,
+				AEC08E64137324AE00BB0B9B /* drag_overlay.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,8 +745,10 @@
 				AEEEE2AE135C6B70000C880A /* iObserveAppDelegate.m in Sources */,
 				AEEEE2B4135C6B70000C880A /* iObserve.xcdatamodeld in Sources */,
 				AE70E519135DB3F900C05955 /* RootViewController.m in Sources */,
-				AE70E51C135DB52000C05955 /* ImageTest1Controller.m in Sources */,
 				AE1E3C74135E256D00C9643A /* TransparentToolbar.m in Sources */,
+				AEC08E61137324AE00BB0B9B /* DKApplicationRegistration.m in Sources */,
+				AEC08E62137324AE00BB0B9B /* DKDragDropServer.m in Sources */,
+				AE0839041376D6BC00D7AEBA /* TableItemTestController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
