@@ -51,7 +51,7 @@ int clicked = 0;
     TransparentToolbar* toolbar = [[TransparentToolbar alloc]
                           initWithFrame:CGRectMake(0, 0, 200, 45)];
 
-    toolbar.backgroundColor = [UIColor redColor];
+   // toolbar.backgroundColor = [UIColor redColor];
     
     // create an array for the buttons
     NSMutableArray* buttons = [[NSMutableArray alloc] initWithCapacity:2];
@@ -99,7 +99,7 @@ int clicked = 0;
     TransparentToolbar* toolbar = [[TransparentToolbar alloc]
                                    initWithFrame:CGRectMake(0, 0, 285, 45)];
     
-    toolbar.backgroundColor = [UIColor redColor];
+    //toolbar.backgroundColor = [UIColor redColor];
     // create an array for the buttons
     NSMutableArray* buttons = [[NSMutableArray alloc] initWithCapacity:3];
     

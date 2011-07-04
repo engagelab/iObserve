@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:iObserve-sb/iObserve-sb.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "container:iObserve.xcodeproj">
    </FileRef>
 </Workspace>
