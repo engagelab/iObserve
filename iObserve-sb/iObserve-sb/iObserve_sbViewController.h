@@ -12,15 +12,16 @@
 @interface iObserve_sbViewController : UIViewController {
     
     UIImageView *mapImage;
-    DrawImageView *customView;
+  
     CGPoint lastPoint;
 	BOOL mouseSwiped;	
 	int mouseMoved;
+    UIImageView *drawImageView;
 }
+@property (nonatomic, strong) IBOutlet UIImageView *drawImageView;
 
 @property (nonatomic, strong) IBOutlet UIImageView *mapImage;
 
-@property (nonatomic, strong) IBOutlet DrawImageView *customView;
 
 - (IBAction)viewReports:(id)sender;
 

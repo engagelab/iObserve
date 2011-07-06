@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE1AEFA113C30F7B0054456B /* ReportsTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1AEFA013C30F7B0054456B /* ReportsTableController.m */; };
+		AE1AEFAD13C339580054456B /* ReportsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1AEFAC13C339580054456B /* ReportsTableViewCell.m */; };
+		AE53ECCB13C461B600EE8104 /* glass_numbers_1.png in Resources */ = {isa = PBXBuildFile; fileRef = AE53ECC813C461B600EE8104 /* glass_numbers_1.png */; };
+		AE53ECCC13C461B600EE8104 /* glass_numbers_2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE53ECC913C461B600EE8104 /* glass_numbers_2.png */; };
+		AE53ECCD13C461B600EE8104 /* glass_numbers_3.png in Resources */ = {isa = PBXBuildFile; fileRef = AE53ECCA13C461B600EE8104 /* glass_numbers_3.png */; };
+		AE53ECD013C461C500EE8104 /* room-map-mod.png in Resources */ = {isa = PBXBuildFile; fileRef = AE53ECCF13C461C500EE8104 /* room-map-mod.png */; };
+		AE53ECD213C4642D00EE8104 /* glass_numbers_4.png in Resources */ = {isa = PBXBuildFile; fileRef = AE53ECD113C4642D00EE8104 /* glass_numbers_4.png */; };
+		AE53ECD513C4772B00EE8104 /* ReportDetailTextCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE53ECD413C4772B00EE8104 /* ReportDetailTextCellView.m */; };
 		AE74D47413C0F29200FD8E11 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE74D47313C0F29200FD8E11 /* UIKit.framework */; };
 		AE74D47613C0F29200FD8E11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE74D47513C0F29200FD8E11 /* Foundation.framework */; };
 		AE74D47813C0F29200FD8E11 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE74D47713C0F29200FD8E11 /* CoreGraphics.framework */; };
@@ -16,11 +24,23 @@
 		AE74D48713C0F29200FD8E11 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE74D48513C0F29200FD8E11 /* MainStoryboard.storyboard */; };
 		AE74D48913C0F29200FD8E11 /* iObserve_sbViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = AE74D48813C0F29200FD8E11 /* iObserve_sbViewController.h */; };
 		AE74D48B13C0F29200FD8E11 /* iObserve_sbViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE74D48A13C0F29200FD8E11 /* iObserve_sbViewController.m */; };
-		AEAC916813C1F29800C5F6BD /* ReportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAC916613C1F29700C5F6BD /* ReportsViewController.m */; };
-		AEAC916913C1F29800C5F6BD /* ReportsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AEAC916713C1F29700C5F6BD /* ReportsViewController.xib */; };
+		AE7D2B7813C49DF200594BC3 /* DrawImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7D2B7713C49DF200594BC3 /* DrawImageView.m */; };
+		AEC7820013C1F9640041FE77 /* room-map.png in Resources */ = {isa = PBXBuildFile; fileRef = AEC781FF13C1F9640041FE77 /* room-map.png */; };
+		AEE2E0F413C4533100ECEACC /* ReportDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE2E0F313C4533100ECEACC /* ReportDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE1AEF9F13C30F7B0054456B /* ReportsTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportsTableController.h; sourceTree = "<group>"; };
+		AE1AEFA013C30F7B0054456B /* ReportsTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportsTableController.m; sourceTree = "<group>"; };
+		AE1AEFAB13C339580054456B /* ReportsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportsTableViewCell.h; sourceTree = "<group>"; };
+		AE1AEFAC13C339580054456B /* ReportsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportsTableViewCell.m; sourceTree = "<group>"; };
+		AE53ECC813C461B600EE8104 /* glass_numbers_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glass_numbers_1.png; sourceTree = "<group>"; };
+		AE53ECC913C461B600EE8104 /* glass_numbers_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glass_numbers_2.png; sourceTree = "<group>"; };
+		AE53ECCA13C461B600EE8104 /* glass_numbers_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glass_numbers_3.png; sourceTree = "<group>"; };
+		AE53ECCF13C461C500EE8104 /* room-map-mod.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "room-map-mod.png"; sourceTree = "<group>"; };
+		AE53ECD113C4642D00EE8104 /* glass_numbers_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glass_numbers_4.png; sourceTree = "<group>"; };
+		AE53ECD313C4772B00EE8104 /* ReportDetailTextCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportDetailTextCellView.h; sourceTree = "<group>"; };
+		AE53ECD413C4772B00EE8104 /* ReportDetailTextCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportDetailTextCellView.m; sourceTree = "<group>"; };
 		AE74D46F13C0F29200FD8E11 /* iObserve-sb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iObserve-sb.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE74D47313C0F29200FD8E11 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AE74D47513C0F29200FD8E11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -34,9 +54,11 @@
 		AE74D48613C0F29200FD8E11 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		AE74D48813C0F29200FD8E11 /* iObserve_sbViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iObserve_sbViewController.h; sourceTree = "<group>"; };
 		AE74D48A13C0F29200FD8E11 /* iObserve_sbViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iObserve_sbViewController.m; sourceTree = "<group>"; };
-		AEAC916513C1F29700C5F6BD /* ReportsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportsViewController.h; sourceTree = "<group>"; };
-		AEAC916613C1F29700C5F6BD /* ReportsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportsViewController.m; sourceTree = "<group>"; };
-		AEAC916713C1F29700C5F6BD /* ReportsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportsViewController.xib; sourceTree = "<group>"; };
+		AE7D2B7613C49DF200594BC3 /* DrawImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawImageView.h; sourceTree = "<group>"; };
+		AE7D2B7713C49DF200594BC3 /* DrawImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawImageView.m; sourceTree = "<group>"; };
+		AEC781FF13C1F9640041FE77 /* room-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "room-map.png"; sourceTree = "<group>"; };
+		AEE2E0F213C4533100ECEACC /* ReportDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportDetailsViewController.h; sourceTree = "<group>"; };
+		AEE2E0F313C4533100ECEACC /* ReportDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +75,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE1AEFAA13C339130054456B /* report */ = {
+			isa = PBXGroup;
+			children = (
+				AEE2E0F213C4533100ECEACC /* ReportDetailsViewController.h */,
+				AEE2E0F313C4533100ECEACC /* ReportDetailsViewController.m */,
+				AE1AEF9F13C30F7B0054456B /* ReportsTableController.h */,
+				AE1AEFA013C30F7B0054456B /* ReportsTableController.m */,
+				AE1AEFAB13C339580054456B /* ReportsTableViewCell.h */,
+				AE1AEFAC13C339580054456B /* ReportsTableViewCell.m */,
+				AE53ECD313C4772B00EE8104 /* ReportDetailTextCellView.h */,
+				AE53ECD413C4772B00EE8104 /* ReportDetailTextCellView.m */,
+			);
+			name = report;
+			sourceTree = "<group>";
+		};
 		AE74D46413C0F29100FD8E11 = {
 			isa = PBXGroup;
 			children = (
@@ -83,12 +120,12 @@
 		AE74D47913C0F29200FD8E11 /* iObserve-sb */ = {
 			isa = PBXGroup;
 			children = (
+				AE1AEFAA13C339130054456B /* report */,
 				AE74D48213C0F29200FD8E11 /* iObserve_sbAppDelegate.h */,
 				AE74D48313C0F29200FD8E11 /* iObserve_sbAppDelegate.m */,
 				AE74D48513C0F29200FD8E11 /* MainStoryboard.storyboard */,
-				AEAC916513C1F29700C5F6BD /* ReportsViewController.h */,
-				AEAC916613C1F29700C5F6BD /* ReportsViewController.m */,
-				AEAC916713C1F29700C5F6BD /* ReportsViewController.xib */,
+				AE7D2B7613C49DF200594BC3 /* DrawImageView.h */,
+				AE7D2B7713C49DF200594BC3 /* DrawImageView.m */,
 				AE74D48813C0F29200FD8E11 /* iObserve_sbViewController.h */,
 				AE74D48A13C0F29200FD8E11 /* iObserve_sbViewController.m */,
 				AE74D47A13C0F29200FD8E11 /* Supporting Files */,
@@ -99,12 +136,26 @@
 		AE74D47A13C0F29200FD8E11 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AEC781FD13C1F93C0041FE77 /* resources */,
 				AE74D47B13C0F29200FD8E11 /* iObserve-sb-Info.plist */,
 				AE74D47C13C0F29200FD8E11 /* InfoPlist.strings */,
 				AE74D47F13C0F29200FD8E11 /* main.m */,
 				AE74D48113C0F29200FD8E11 /* iObserve-sb-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AEC781FD13C1F93C0041FE77 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				AE53ECCF13C461C500EE8104 /* room-map-mod.png */,
+				AE53ECC813C461B600EE8104 /* glass_numbers_1.png */,
+				AE53ECC913C461B600EE8104 /* glass_numbers_2.png */,
+				AE53ECCA13C461B600EE8104 /* glass_numbers_3.png */,
+				AE53ECD113C4642D00EE8104 /* glass_numbers_4.png */,
+				AEC781FF13C1F9640041FE77 /* room-map.png */,
+			);
+			name = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,7 +211,12 @@
 				AE74D47E13C0F29200FD8E11 /* InfoPlist.strings in Resources */,
 				AE74D48713C0F29200FD8E11 /* MainStoryboard.storyboard in Resources */,
 				AE74D48913C0F29200FD8E11 /* iObserve_sbViewController.h in Resources */,
-				AEAC916913C1F29800C5F6BD /* ReportsViewController.xib in Resources */,
+				AEC7820013C1F9640041FE77 /* room-map.png in Resources */,
+				AE53ECCB13C461B600EE8104 /* glass_numbers_1.png in Resources */,
+				AE53ECCC13C461B600EE8104 /* glass_numbers_2.png in Resources */,
+				AE53ECCD13C461B600EE8104 /* glass_numbers_3.png in Resources */,
+				AE53ECD013C461C500EE8104 /* room-map-mod.png in Resources */,
+				AE53ECD213C4642D00EE8104 /* glass_numbers_4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,7 +230,11 @@
 				AE74D48013C0F29200FD8E11 /* main.m in Sources */,
 				AE74D48413C0F29200FD8E11 /* iObserve_sbAppDelegate.m in Sources */,
 				AE74D48B13C0F29200FD8E11 /* iObserve_sbViewController.m in Sources */,
-				AEAC916813C1F29800C5F6BD /* ReportsViewController.m in Sources */,
+				AE1AEFA113C30F7B0054456B /* ReportsTableController.m in Sources */,
+				AE1AEFAD13C339580054456B /* ReportsTableViewCell.m in Sources */,
+				AEE2E0F413C4533100ECEACC /* ReportDetailsViewController.m in Sources */,
+				AE53ECD513C4772B00EE8104 /* ReportDetailTextCellView.m in Sources */,
+				AE7D2B7813C49DF200594BC3 /* DrawImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,8 +9,9 @@
 #import "iObserve_sbViewController.h"
 
 @implementation iObserve_sbViewController
+@synthesize drawImageView;
 @synthesize mapImage;
-@synthesize customView;
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -26,7 +27,7 @@
 	UITouch *touch = [touches anyObject];
 	
 	if ([touch tapCount] == 2) {
-		mapImage.image = nil;
+		drawImageView.image = nil;
 		return;
 	}
     
@@ -45,7 +46,7 @@
 	
 	
 	UIGraphicsBeginImageContext(self.view.frame.size);
-	[mapImage.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+	[drawImageView.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
 	CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
 	CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 5.0);
 	CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 1.0, 0.0, 0.0, 1.0);
@@ -53,7 +54,7 @@
 	CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
 	CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), currentPoint.x, currentPoint.y);
 	CGContextStrokePath(UIGraphicsGetCurrentContext());
-	mapImage.image = UIGraphicsGetImageFromCurrentImageContext();
+	drawImageView.image = UIGraphicsGetImageFromCurrentImageContext();
 	UIGraphicsEndImageContext();
 	
 	lastPoint = currentPoint;
@@ -71,14 +72,14 @@
 	UITouch *touch = [touches anyObject];
 	
 	if ([touch tapCount] == 2) {
-		mapImage.image = nil;
+		drawImageView.image = nil;
 		return;
 	}
 	
 	
 	if(!mouseSwiped) {
 		UIGraphicsBeginImageContext(self.view.frame.size);
-		[mapImage.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+		[drawImageView.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
 		CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
 		CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 5.0);
 		CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 1.0, 0.0, 0.0, 1.0);
@@ -86,7 +87,7 @@
 		CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
 		CGContextStrokePath(UIGraphicsGetCurrentContext());
 		CGContextFlush(UIGraphicsGetCurrentContext());
-		mapImage.image = UIGraphicsGetImageFromCurrentImageContext();
+		drawImageView.image = UIGraphicsGetImageFromCurrentImageContext();
 		UIGraphicsEndImageContext();
 	}
 }
@@ -103,8 +104,8 @@
 
 - (void)viewDidUnload
 {
-    [self setMapImage:nil];
-    [self setCustomView:nil];
+    
+    
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
