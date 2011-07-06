@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1881" systemVersion="11A511" targetRuntime="iOS.CocoaTouch.iPad" nextObjectID="30" propertyAccessControl="none" initialViewController="6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1881" systemVersion="11A511" targetRuntime="iOS.CocoaTouch.iPad" nextObjectID="173" propertyAccessControl="none" initialViewController="6">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="876"/>
@@ -12,15 +12,27 @@
                     <view key="view" contentMode="scaleToFill" id="5">
                         <rect key="frame" x="0.0" y="64" width="1024" height="660"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="33">
+                                <rect key="frame" x="10" y="20" width="148" height="152"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="room-map.png" id="171">
+                                <rect key="frame" x="181" y="20" width="809" height="620"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.58757218070652173" green="0.58757218070652173" blue="0.58757218070652173" alpha="1" colorSpace="calibratedRGB"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Observe" id="11">
                         <barButtonItem key="backBarButtonItem" title="Observe" id="12"/>
                         <barButtonItem key="rightBarButtonItem" title="View Reports" id="19">
                             <connections>
-                                <segue destination="24" kind="push" id="28"/>
+                                <segue destination="34" kind="push" id="40"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -29,9 +41,12 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedMetricsInferredSentinel key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="mapImage" destination="171" id="172"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="663" y="-710"/>
+            <point key="canvasLocation" x="765" y="-668"/>
         </scene>
         <scene sceneID="9">
             <objects>
@@ -55,18 +70,205 @@
             </objects>
             <point key="canvasLocation" x="-492" y="-724"/>
         </scene>
-        <scene sceneID="27">
+        <scene sceneID="39">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="26" userLabel="First Responder" sceneMemberID="firstRespodner"/>
-                <viewController id="24" customClass="ReportsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="25">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="38" userLabel="First Responder" sceneMemberID="firstRespodner"/>
+                <tableViewController id="34" customClass="ReportsTableController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="35">
                         <rect key="frame" x="0.0" y="64" width="1024" height="660"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" lineBreakMode="tailTruncation" reuseIdentifier="reportCell" id="42" customClass="ReportsTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="." lineBreakMode="tailTruncation" minimumFontSize="10" id="43">
+                                            <rect key="frame" x="14" y="3" width="17" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" size="system"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Time Stamp:" lineBreakMode="tailTruncation" minimumFontSize="10" id="44">
+                                            <rect key="frame" x="105" y="20" width="80" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" size="system"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Number of Data Points:" lineBreakMode="tailTruncation" minimumFontSize="10" id="45">
+                                            <rect key="frame" x="39" y="3" width="146" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" size="system"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="10" lineBreakMode="tailTruncation" minimumFontSize="10" id="46">
+                                            <rect key="frame" x="211" y="3" width="36" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" size="system"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="12:01 4/7/2011" lineBreakMode="tailTruncation" minimumFontSize="10" id="47">
+                                            <rect key="frame" x="211" y="20" width="94" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" size="system"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <connections>
+                                    <outlet property="cellNumberLabel" destination="43" id="157"/>
+                                    <outlet property="dataPointNumberLabel" destination="46" id="53"/>
+                                    <outlet property="timestampLabel" destination="47" id="54"/>
+                                    <segue destination="131" kind="push" id="135"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="34" id="37"/>
+                            <outlet property="delegate" destination="34" id="36"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Reports (10)" id="41">
+                        <barButtonItem key="rightBarButtonItem" title="Email" id="48"/>
+                    </navigationItem>
+                    <simulatedMetricsInferredSentinel key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedMetricsInferredSentinel key="simulatedBottomBarMetrics"/>
+                    <simulatedMetricsInferredSentinel key="simulatedOrientationMetrics"/>
+                    <simulatedMetricsInferredSentinel key="simulatedDestinationMetrics"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1928" y="-702"/>
+        </scene>
+        <scene sceneID="134">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="133" userLabel="First Responder" sceneMemberID="firstRespodner"/>
+                <viewController id="131" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="137">
+                        <rect key="frame" x="0.0" y="64" width="1024" height="660"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glass_numbers_1.png" id="138">
+                                <rect key="frame" x="20" y="27" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glass_numbers_2.png" id="139">
+                                <rect key="frame" x="20" y="86" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glass_numbers_3.png" id="140">
+                                <rect key="frame" x="20" y="142" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="12:10pm" lineBreakMode="tailTruncation" minimumFontSize="10" id="141">
+                                <rect key="frame" x="88" y="39" width="55" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="room-map-mod.png" id="143">
+                                <rect key="frame" x="241" y="277" width="483" height="397"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Adult Female" lineBreakMode="tailTruncation" minimumFontSize="10" id="145">
+                                <rect key="frame" x="164" y="39" width="83" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Enter" lineBreakMode="tailTruncation" minimumFontSize="10" id="146">
+                                <rect key="frame" x="276" y="39" width="83" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="12:11pm" lineBreakMode="tailTruncation" minimumFontSize="10" id="147">
+                                <rect key="frame" x="88" y="98" width="55" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Adult Female" lineBreakMode="tailTruncation" minimumFontSize="10" id="148">
+                                <rect key="frame" x="164" y="98" width="83" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Look" lineBreakMode="tailTruncation" minimumFontSize="10" id="149">
+                                <rect key="frame" x="276" y="98" width="83" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="12:12pm" lineBreakMode="tailTruncation" minimumFontSize="10" id="150">
+                                <rect key="frame" x="88" y="154" width="55" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Adult Female" lineBreakMode="tailTruncation" minimumFontSize="10" id="151">
+                                <rect key="frame" x="164" y="154" width="83" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Look" lineBreakMode="tailTruncation" minimumFontSize="10" id="152">
+                                <rect key="frame" x="276" y="154" width="83" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="12:13pm" lineBreakMode="tailTruncation" minimumFontSize="10" id="153">
+                                <rect key="frame" x="88" y="210" width="55" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Adult Female" lineBreakMode="tailTruncation" minimumFontSize="10" id="154">
+                                <rect key="frame" x="164" y="210" width="83" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Exit" lineBreakMode="tailTruncation" minimumFontSize="10" id="155">
+                                <rect key="frame" x="276" y="210" width="83" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="glass_numbers_4.png" id="156">
+                                <rect key="frame" x="20" y="198" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" id="29"/>
+                    <navigationItem key="navigationItem" title="Report Detail - 12:10pm" id="136"/>
                     <simulatedMetricsInferredSentinel key="simulatedStatusBarMetrics"/>
                     <simulatedMetricsInferredSentinel key="simulatedTopBarMetrics"/>
                     <simulatedMetricsInferredSentinel key="simulatedBottomBarMetrics"/>
@@ -74,14 +276,40 @@
                     <simulatedMetricsInferredSentinel key="simulatedDestinationMetrics"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1824" y="-702"/>
+            <point key="canvasLocation" x="3043" y="-777"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="glass_numbers_1.png" width="45" height="45"/>
+        <image name="glass_numbers_2.png" width="45" height="45"/>
+        <image name="glass_numbers_3.png" width="45" height="45"/>
+        <image name="glass_numbers_4.png" width="45" height="45"/>
+        <image name="room-map-mod.png" width="1222" height="1144"/>
+        <image name="room-map.png" width="1222" height="1144"/>
+    </resources>
     <classes>
+        <class className="DrawImageView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DrawImageView.h"/>
+            <relationships/>
+        </class>
+        <class className="ReportsTableController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportsTableController.h"/>
+            <relationships/>
+        </class>
+        <class className="ReportsTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportsTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cellNumberLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dataPointNumberLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timestampLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="iObserve_sbViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/iObserve_sbViewController.h"/>
             <relationships>
                 <relationship kind="action" name="viewReports:"/>
+                <relationship kind="outlet" name="customView" candidateClass="DrawImageView"/>
+                <relationship kind="outlet" name="mapImage" candidateClass="UIImageView"/>
             </relationships>
         </class>
     </classes>
