@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		AE1AEFA113C30F7B0054456B /* ReportsTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1AEFA013C30F7B0054456B /* ReportsTableController.m */; };
 		AE1AEFAD13C339580054456B /* ReportsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1AEFAC13C339580054456B /* ReportsTableViewCell.m */; };
+		AE2BB06D13C7170400C0E8C8 /* iObserve_sb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE2BB06813C7170400C0E8C8 /* iObserve_sb.xcdatamodeld */; };
+		AE2BB06E13C7170400C0E8C8 /* iObserve_sbAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2BB06B13C7170400C0E8C8 /* iObserve_sbAppDelegate.m */; };
+		AE2BB07213C7179500C0E8C8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2BB07113C7179500C0E8C8 /* CoreData.framework */; };
+		AE2BB0A613C71F5800C0E8C8 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2BB0A513C71F5800C0E8C8 /* Person.m */; };
+		AE2BB0AC13C71F9200C0E8C8 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2BB0AB13C71F9200C0E8C8 /* Group.m */; };
 		AE53ECCB13C461B600EE8104 /* glass_numbers_1.png in Resources */ = {isa = PBXBuildFile; fileRef = AE53ECC813C461B600EE8104 /* glass_numbers_1.png */; };
 		AE53ECCC13C461B600EE8104 /* glass_numbers_2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE53ECC913C461B600EE8104 /* glass_numbers_2.png */; };
 		AE53ECCD13C461B600EE8104 /* glass_numbers_3.png in Resources */ = {isa = PBXBuildFile; fileRef = AE53ECCA13C461B600EE8104 /* glass_numbers_3.png */; };
@@ -20,7 +25,6 @@
 		AE74D47813C0F29200FD8E11 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE74D47713C0F29200FD8E11 /* CoreGraphics.framework */; };
 		AE74D47E13C0F29200FD8E11 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE74D47C13C0F29200FD8E11 /* InfoPlist.strings */; };
 		AE74D48013C0F29200FD8E11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE74D47F13C0F29200FD8E11 /* main.m */; };
-		AE74D48413C0F29200FD8E11 /* iObserve_sbAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE74D48313C0F29200FD8E11 /* iObserve_sbAppDelegate.m */; };
 		AE74D48713C0F29200FD8E11 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE74D48513C0F29200FD8E11 /* MainStoryboard.storyboard */; };
 		AE74D48913C0F29200FD8E11 /* iObserve_sbViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = AE74D48813C0F29200FD8E11 /* iObserve_sbViewController.h */; };
 		AE74D48B13C0F29200FD8E11 /* iObserve_sbViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE74D48A13C0F29200FD8E11 /* iObserve_sbViewController.m */; };
@@ -34,6 +38,15 @@
 		AE1AEFA013C30F7B0054456B /* ReportsTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportsTableController.m; sourceTree = "<group>"; };
 		AE1AEFAB13C339580054456B /* ReportsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportsTableViewCell.h; sourceTree = "<group>"; };
 		AE1AEFAC13C339580054456B /* ReportsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportsTableViewCell.m; sourceTree = "<group>"; };
+		AE2BB06913C7170400C0E8C8 /* iObserve_sb.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iObserve_sb.xcdatamodel; sourceTree = "<group>"; };
+		AE2BB06A13C7170400C0E8C8 /* iObserve_sbAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iObserve_sbAppDelegate.h; sourceTree = "<group>"; };
+		AE2BB06B13C7170400C0E8C8 /* iObserve_sbAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iObserve_sbAppDelegate.m; sourceTree = "<group>"; };
+		AE2BB06C13C7170400C0E8C8 /* iObserve-sb-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iObserve-sb-Prefix.pch"; sourceTree = "<group>"; };
+		AE2BB07113C7179500C0E8C8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AE2BB0A413C71F5800C0E8C8 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		AE2BB0A513C71F5800C0E8C8 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		AE2BB0AA13C71F9200C0E8C8 /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
+		AE2BB0AB13C71F9200C0E8C8 /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
 		AE53ECC813C461B600EE8104 /* glass_numbers_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glass_numbers_1.png; sourceTree = "<group>"; };
 		AE53ECC913C461B600EE8104 /* glass_numbers_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glass_numbers_2.png; sourceTree = "<group>"; };
 		AE53ECCA13C461B600EE8104 /* glass_numbers_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glass_numbers_3.png; sourceTree = "<group>"; };
@@ -48,9 +61,6 @@
 		AE74D47B13C0F29200FD8E11 /* iObserve-sb-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iObserve-sb-Info.plist"; sourceTree = "<group>"; };
 		AE74D47D13C0F29200FD8E11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AE74D47F13C0F29200FD8E11 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AE74D48113C0F29200FD8E11 /* iObserve-sb-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iObserve-sb-Prefix.pch"; sourceTree = "<group>"; };
-		AE74D48213C0F29200FD8E11 /* iObserve_sbAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iObserve_sbAppDelegate.h; sourceTree = "<group>"; };
-		AE74D48313C0F29200FD8E11 /* iObserve_sbAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iObserve_sbAppDelegate.m; sourceTree = "<group>"; };
 		AE74D48613C0F29200FD8E11 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		AE74D48813C0F29200FD8E11 /* iObserve_sbViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iObserve_sbViewController.h; sourceTree = "<group>"; };
 		AE74D48A13C0F29200FD8E11 /* iObserve_sbViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iObserve_sbViewController.m; sourceTree = "<group>"; };
@@ -66,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE2BB07213C7179500C0E8C8 /* CoreData.framework in Frameworks */,
 				AE74D47413C0F29200FD8E11 /* UIKit.framework in Frameworks */,
 				AE74D47613C0F29200FD8E11 /* Foundation.framework in Frameworks */,
 				AE74D47813C0F29200FD8E11 /* CoreGraphics.framework in Frameworks */,
@@ -90,6 +101,28 @@
 			name = report;
 			sourceTree = "<group>";
 		};
+		AE2BB07013C7171D00C0E8C8 /* init */ = {
+			isa = PBXGroup;
+			children = (
+				AE2BB06A13C7170400C0E8C8 /* iObserve_sbAppDelegate.h */,
+				AE2BB06B13C7170400C0E8C8 /* iObserve_sbAppDelegate.m */,
+				AE2BB06C13C7170400C0E8C8 /* iObserve-sb-Prefix.pch */,
+			);
+			name = init;
+			sourceTree = "<group>";
+		};
+		AE2BB0A313C71F1B00C0E8C8 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				AE2BB0AA13C71F9200C0E8C8 /* Group.h */,
+				AE2BB0AB13C71F9200C0E8C8 /* Group.m */,
+				AE2BB06813C7170400C0E8C8 /* iObserve_sb.xcdatamodeld */,
+				AE2BB0A413C71F5800C0E8C8 /* Person.h */,
+				AE2BB0A513C71F5800C0E8C8 /* Person.m */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
 		AE74D46413C0F29100FD8E11 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +143,7 @@
 		AE74D47213C0F29200FD8E11 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE2BB07113C7179500C0E8C8 /* CoreData.framework */,
 				AE74D47313C0F29200FD8E11 /* UIKit.framework */,
 				AE74D47513C0F29200FD8E11 /* Foundation.framework */,
 				AE74D47713C0F29200FD8E11 /* CoreGraphics.framework */,
@@ -120,9 +154,9 @@
 		AE74D47913C0F29200FD8E11 /* iObserve-sb */ = {
 			isa = PBXGroup;
 			children = (
+				AE2BB0A313C71F1B00C0E8C8 /* Entities */,
+				AE2BB07013C7171D00C0E8C8 /* init */,
 				AE1AEFAA13C339130054456B /* report */,
-				AE74D48213C0F29200FD8E11 /* iObserve_sbAppDelegate.h */,
-				AE74D48313C0F29200FD8E11 /* iObserve_sbAppDelegate.m */,
 				AE74D48513C0F29200FD8E11 /* MainStoryboard.storyboard */,
 				AE7D2B7613C49DF200594BC3 /* DrawImageView.h */,
 				AE7D2B7713C49DF200594BC3 /* DrawImageView.m */,
@@ -140,7 +174,6 @@
 				AE74D47B13C0F29200FD8E11 /* iObserve-sb-Info.plist */,
 				AE74D47C13C0F29200FD8E11 /* InfoPlist.strings */,
 				AE74D47F13C0F29200FD8E11 /* main.m */,
-				AE74D48113C0F29200FD8E11 /* iObserve-sb-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -228,13 +261,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE74D48013C0F29200FD8E11 /* main.m in Sources */,
-				AE74D48413C0F29200FD8E11 /* iObserve_sbAppDelegate.m in Sources */,
 				AE74D48B13C0F29200FD8E11 /* iObserve_sbViewController.m in Sources */,
 				AE1AEFA113C30F7B0054456B /* ReportsTableController.m in Sources */,
 				AE1AEFAD13C339580054456B /* ReportsTableViewCell.m in Sources */,
 				AEE2E0F413C4533100ECEACC /* ReportDetailsViewController.m in Sources */,
 				AE53ECD513C4772B00EE8104 /* ReportDetailTextCellView.m in Sources */,
 				AE7D2B7813C49DF200594BC3 /* DrawImageView.m in Sources */,
+				AE2BB06D13C7170400C0E8C8 /* iObserve_sb.xcdatamodeld in Sources */,
+				AE2BB06E13C7170400C0E8C8 /* iObserve_sbAppDelegate.m in Sources */,
+				AE2BB0A613C71F5800C0E8C8 /* Person.m in Sources */,
+				AE2BB0AC13C71F9200C0E8C8 /* Group.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +348,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iObserve-sb/iObserve-sb-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "iObserve-sb/iObserve-sb-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -323,6 +360,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iObserve-sb/iObserve-sb-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "iObserve-sb/iObserve-sb-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -351,6 +389,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AE2BB06813C7170400C0E8C8 /* iObserve_sb.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AE2BB06913C7170400C0E8C8 /* iObserve_sb.xcdatamodel */,
+			);
+			currentVersion = AE2BB06913C7170400C0E8C8 /* iObserve_sb.xcdatamodel */;
+			path = iObserve_sb.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AE74D46613C0F29100FD8E11 /* Project object */;
 }

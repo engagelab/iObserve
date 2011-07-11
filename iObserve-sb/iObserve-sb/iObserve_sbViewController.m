@@ -9,6 +9,7 @@
 #import "iObserve_sbViewController.h"
 
 @implementation iObserve_sbViewController
+@synthesize drawToggleButton;
 @synthesize drawImageView;
 @synthesize mapImage;
 
@@ -22,74 +23,89 @@
 
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-	
-	mouseSwiped = NO;
-	UITouch *touch = [touches anyObject];
-	
-	if ([touch tapCount] == 2) {
-		drawImageView.image = nil;
-		return;
-	}
-    
-	lastPoint = [touch locationInView:self.view];
-	lastPoint.y -= 20;
-    
+    if( drawToggle == YES) {
+        mouseSwiped = NO;
+        UITouch *touch = [touches anyObject];
+        
+        if ([touch tapCount] == 2) {
+            drawImageView.image = nil;
+            return;
+        }
+        
+        lastPoint = [touch locationInView:self.view];
+        lastPoint.y -= 20;
+    }
+}
+- (IBAction)DrawToggle:(id)sender {
+    drawToggle = !drawToggle;
+    NSLog(@"Draw toggle %d", drawToggle);
+    if(drawToggle == YES) {
+        [drawToggleButton setTitle:@"Drawing is On" forState:UIControlStateNormal];
+
+    } else {
+        [drawToggleButton setTitle:@"Drawing is Off" forState:UIControlStateNormal];
+
+    }
 }
 
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-	mouseSwiped = YES;
-	
-	UITouch *touch = [touches anyObject];	
-	CGPoint currentPoint = [touch locationInView:self.view];
-	currentPoint.y -= 20;
-	
-	
-	UIGraphicsBeginImageContext(self.view.frame.size);
-	[drawImageView.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-	CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
-	CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 5.0);
-	CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 1.0, 0.0, 0.0, 1.0);
-	CGContextBeginPath(UIGraphicsGetCurrentContext());
-	CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
-	CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), currentPoint.x, currentPoint.y);
-	CGContextStrokePath(UIGraphicsGetCurrentContext());
-	drawImageView.image = UIGraphicsGetImageFromCurrentImageContext();
-	UIGraphicsEndImageContext();
-	
-	lastPoint = currentPoint;
-    
-	mouseMoved++;
-	
-	if (mouseMoved == 10) {
-		mouseMoved = 0;
-	}
-    
+    if( drawToggle == YES) {
+        mouseSwiped = YES;
+        
+        UITouch *touch = [touches anyObject];	
+        CGPoint currentPoint = [touch locationInView:self.view];
+        currentPoint.y -= 20;
+        
+        
+        UIGraphicsBeginImageContext(self.view.frame.size);
+        [drawImageView.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+        CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
+        CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 5.0);
+        CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 1.0, 0.0, 0.0, 1.0);
+        CGContextBeginPath(UIGraphicsGetCurrentContext());
+        CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
+        CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), currentPoint.x, currentPoint.y);
+        CGContextStrokePath(UIGraphicsGetCurrentContext());
+        drawImageView.image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        lastPoint = currentPoint;
+        
+        mouseMoved++;
+        
+        if (mouseMoved == 10) {
+            mouseMoved = 0;
+        }
+    }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
 	
-	UITouch *touch = [touches anyObject];
-	
-	if ([touch tapCount] == 2) {
-		drawImageView.image = nil;
-		return;
-	}
-	
-	
-	if(!mouseSwiped) {
-		UIGraphicsBeginImageContext(self.view.frame.size);
-		[drawImageView.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-		CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
-		CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 5.0);
-		CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 1.0, 0.0, 0.0, 1.0);
-		CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
-		CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
-		CGContextStrokePath(UIGraphicsGetCurrentContext());
-		CGContextFlush(UIGraphicsGetCurrentContext());
-		drawImageView.image = UIGraphicsGetImageFromCurrentImageContext();
-		UIGraphicsEndImageContext();
-	}
+    if( drawToggle == YES) {
+        
+        UITouch *touch = [touches anyObject];
+        
+        if ([touch tapCount] == 2) {
+            drawImageView.image = nil;
+            return;
+        }
+        
+        
+        if(!mouseSwiped) {
+            UIGraphicsBeginImageContext(self.view.frame.size);
+            [drawImageView.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+            CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
+            CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 5.0);
+            CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 1.0, 0.0, 0.0, 1.0);
+            CGContextMoveToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
+            CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), lastPoint.x, lastPoint.y);
+            CGContextStrokePath(UIGraphicsGetCurrentContext());
+            CGContextFlush(UIGraphicsGetCurrentContext());
+            drawImageView.image = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+        }
+    }
 }
 
 
@@ -106,6 +122,7 @@
 {
     
     
+    [self setDrawToggleButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

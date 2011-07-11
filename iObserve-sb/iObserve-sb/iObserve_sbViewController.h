@@ -17,7 +17,11 @@
 	BOOL mouseSwiped;	
 	int mouseMoved;
     UIImageView *drawImageView;
+    BOOL drawToggle;	
+    UIButton *drawToggleButton;
 }
+@property (nonatomic, strong) IBOutlet UIButton *drawToggleButton;
+
 @property (nonatomic, strong) IBOutlet UIImageView *drawImageView;
 
 @property (nonatomic, strong) IBOutlet UIImageView *mapImage;
