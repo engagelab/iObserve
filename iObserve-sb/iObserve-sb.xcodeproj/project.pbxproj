@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE16477013CB192100BA9B41 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE16476F13CB192100BA9B41 /* CoreDataTableViewController.m */; };
+		AE16478A13CB255000BA9B41 /* ReportEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = AE16478913CB255000BA9B41 /* ReportEntry.m */; };
+		AE16478D13CB255100BA9B41 /* MapEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = AE16478C13CB255100BA9B41 /* MapEntry.m */; };
+		AE16479013CB255100BA9B41 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = AE16478F13CB255100BA9B41 /* Activity.m */; };
+		AE16479313CB255100BA9B41 /* Map.m in Sources */ = {isa = PBXBuildFile; fileRef = AE16479213CB255100BA9B41 /* Map.m */; };
+		AE16479613CB255100BA9B41 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = AE16479513CB255100BA9B41 /* Report.m */; };
+		AE16479913CB255100BA9B41 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = AE16479813CB255100BA9B41 /* Person.m */; };
 		AE1AEFA113C30F7B0054456B /* ReportsTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1AEFA013C30F7B0054456B /* ReportsTableController.m */; };
 		AE1AEFAD13C339580054456B /* ReportsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1AEFAC13C339580054456B /* ReportsTableViewCell.m */; };
 		AE2BB06D13C7170400C0E8C8 /* iObserve_sb.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE2BB06813C7170400C0E8C8 /* iObserve_sb.xcdatamodeld */; };
 		AE2BB06E13C7170400C0E8C8 /* iObserve_sbAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2BB06B13C7170400C0E8C8 /* iObserve_sbAppDelegate.m */; };
 		AE2BB07213C7179500C0E8C8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2BB07113C7179500C0E8C8 /* CoreData.framework */; };
-		AE2BB0A613C71F5800C0E8C8 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2BB0A513C71F5800C0E8C8 /* Person.m */; };
 		AE2BB0AC13C71F9200C0E8C8 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2BB0AB13C71F9200C0E8C8 /* Group.m */; };
 		AE53ECCB13C461B600EE8104 /* glass_numbers_1.png in Resources */ = {isa = PBXBuildFile; fileRef = AE53ECC813C461B600EE8104 /* glass_numbers_1.png */; };
 		AE53ECCC13C461B600EE8104 /* glass_numbers_2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE53ECC913C461B600EE8104 /* glass_numbers_2.png */; };
@@ -34,6 +40,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE16476E13CB192100BA9B41 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		AE16476F13CB192100BA9B41 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		AE16478813CB255000BA9B41 /* ReportEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportEntry.h; sourceTree = "<group>"; };
+		AE16478913CB255000BA9B41 /* ReportEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportEntry.m; sourceTree = "<group>"; };
+		AE16478B13CB255100BA9B41 /* MapEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapEntry.h; sourceTree = "<group>"; };
+		AE16478C13CB255100BA9B41 /* MapEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapEntry.m; sourceTree = "<group>"; };
+		AE16478E13CB255100BA9B41 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		AE16478F13CB255100BA9B41 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		AE16479113CB255100BA9B41 /* Map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Map.h; sourceTree = "<group>"; };
+		AE16479213CB255100BA9B41 /* Map.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Map.m; sourceTree = "<group>"; };
+		AE16479413CB255100BA9B41 /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
+		AE16479513CB255100BA9B41 /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
+		AE16479713CB255100BA9B41 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		AE16479813CB255100BA9B41 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		AE1AEF9F13C30F7B0054456B /* ReportsTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportsTableController.h; sourceTree = "<group>"; };
 		AE1AEFA013C30F7B0054456B /* ReportsTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportsTableController.m; sourceTree = "<group>"; };
 		AE1AEFAB13C339580054456B /* ReportsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportsTableViewCell.h; sourceTree = "<group>"; };
@@ -43,8 +63,6 @@
 		AE2BB06B13C7170400C0E8C8 /* iObserve_sbAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iObserve_sbAppDelegate.m; sourceTree = "<group>"; };
 		AE2BB06C13C7170400C0E8C8 /* iObserve-sb-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iObserve-sb-Prefix.pch"; sourceTree = "<group>"; };
 		AE2BB07113C7179500C0E8C8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		AE2BB0A413C71F5800C0E8C8 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		AE2BB0A513C71F5800C0E8C8 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		AE2BB0AA13C71F9200C0E8C8 /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
 		AE2BB0AB13C71F9200C0E8C8 /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
 		AE53ECC813C461B600EE8104 /* glass_numbers_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glass_numbers_1.png; sourceTree = "<group>"; };
@@ -86,6 +104,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE16477213CB1FE000BA9B41 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				AE16476E13CB192100BA9B41 /* CoreDataTableViewController.h */,
+				AE16476F13CB192100BA9B41 /* CoreDataTableViewController.m */,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
 		AE1AEFAA13C339130054456B /* report */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,8 +144,18 @@
 				AE2BB0AA13C71F9200C0E8C8 /* Group.h */,
 				AE2BB0AB13C71F9200C0E8C8 /* Group.m */,
 				AE2BB06813C7170400C0E8C8 /* iObserve_sb.xcdatamodeld */,
-				AE2BB0A413C71F5800C0E8C8 /* Person.h */,
-				AE2BB0A513C71F5800C0E8C8 /* Person.m */,
+				AE16478813CB255000BA9B41 /* ReportEntry.h */,
+				AE16478913CB255000BA9B41 /* ReportEntry.m */,
+				AE16478B13CB255100BA9B41 /* MapEntry.h */,
+				AE16478C13CB255100BA9B41 /* MapEntry.m */,
+				AE16478E13CB255100BA9B41 /* Activity.h */,
+				AE16478F13CB255100BA9B41 /* Activity.m */,
+				AE16479113CB255100BA9B41 /* Map.h */,
+				AE16479213CB255100BA9B41 /* Map.m */,
+				AE16479413CB255100BA9B41 /* Report.h */,
+				AE16479513CB255100BA9B41 /* Report.m */,
+				AE16479713CB255100BA9B41 /* Person.h */,
+				AE16479813CB255100BA9B41 /* Person.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -154,6 +191,7 @@
 		AE74D47913C0F29200FD8E11 /* iObserve-sb */ = {
 			isa = PBXGroup;
 			children = (
+				AE16477213CB1FE000BA9B41 /* util */,
 				AE2BB0A313C71F1B00C0E8C8 /* Entities */,
 				AE2BB07013C7171D00C0E8C8 /* init */,
 				AE1AEFAA13C339130054456B /* report */,
@@ -269,8 +307,14 @@
 				AE7D2B7813C49DF200594BC3 /* DrawImageView.m in Sources */,
 				AE2BB06D13C7170400C0E8C8 /* iObserve_sb.xcdatamodeld in Sources */,
 				AE2BB06E13C7170400C0E8C8 /* iObserve_sbAppDelegate.m in Sources */,
-				AE2BB0A613C71F5800C0E8C8 /* Person.m in Sources */,
 				AE2BB0AC13C71F9200C0E8C8 /* Group.m in Sources */,
+				AE16477013CB192100BA9B41 /* CoreDataTableViewController.m in Sources */,
+				AE16478A13CB255000BA9B41 /* ReportEntry.m in Sources */,
+				AE16478D13CB255100BA9B41 /* MapEntry.m in Sources */,
+				AE16479013CB255100BA9B41 /* Activity.m in Sources */,
+				AE16479313CB255100BA9B41 /* Map.m in Sources */,
+				AE16479613CB255100BA9B41 /* Report.m in Sources */,
+				AE16479913CB255100BA9B41 /* Person.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

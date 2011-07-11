@@ -8,17 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import "DrawImageView.h"
+#import "Report.h"
 
 @interface iObserve_sbViewController : UIViewController {
     
-    UIImageView *mapImage;
-  
-    CGPoint lastPoint;
+    BOOL drawToggle;	
 	BOOL mouseSwiped;	
 	int mouseMoved;
+    
     UIImageView *drawImageView;
-    BOOL drawToggle;	
     UIButton *drawToggleButton;
+    UIImageView *mapImage;
+    CGPoint lastPoint;
+    
+    Report *report;
+    
 }
 @property (nonatomic, strong) IBOutlet UIButton *drawToggleButton;
 
@@ -26,6 +30,7 @@
 
 @property (nonatomic, strong) IBOutlet UIImageView *mapImage;
 
+- (IBAction)newReport:(id)sender;
 
 - (IBAction)viewReports:(id)sender;
 

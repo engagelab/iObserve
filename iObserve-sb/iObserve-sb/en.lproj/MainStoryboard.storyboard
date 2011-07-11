@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1881" systemVersion="11A511" targetRuntime="iOS.CocoaTouch.iPad" nextObjectID="181" propertyAccessControl="none" initialViewController="6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1881" systemVersion="11A511" targetRuntime="iOS.CocoaTouch.iPad" nextObjectID="184" propertyAccessControl="none" initialViewController="6">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="876"/>
@@ -49,7 +49,11 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Observe" id="11">
                         <barButtonItem key="backBarButtonItem" title="Observe" id="12"/>
-                        <barButtonItem key="leftBarButtonItem" title="New Report" id="175"/>
+                        <barButtonItem key="leftBarButtonItem" title="New Report" id="175">
+                            <connections>
+                                <action selector="newReport:" destination="2" id="183"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="View Reports" id="19">
                             <connections>
                                 <segue destination="34" kind="push" id="40"/>
@@ -307,7 +311,7 @@
         <image name="glass_numbers_3.png" width="45" height="45"/>
         <image name="glass_numbers_4.png" width="45" height="45"/>
         <image name="room-map-mod.png" width="1222" height="1144"/>
-        <image name="room-map.png" width="1222" height="1144"/>
+        <image name="room-map.png" width="16" height="16"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>

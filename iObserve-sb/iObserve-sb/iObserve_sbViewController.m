@@ -7,11 +7,13 @@
 //
 
 #import "iObserve_sbViewController.h"
+#import "iObserve_sbAppDelegate.h"
 
 @implementation iObserve_sbViewController
 @synthesize drawToggleButton;
 @synthesize drawImageView;
 @synthesize mapImage;
+
 
 
 - (void)didReceiveMemoryWarning
@@ -20,6 +22,23 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+- (IBAction)newReport:(id)sender {
+    
+    iObserve_sbAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    
+    NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
+    
+    report = [Report reportWithTestAttributesInManagedObjectContext:managedObjectContext];
+    
+    [appDelegate saveContext];
+                                           
+    NSLog(@"new report fired");
+    
+}
+
+- (IBAction)viewReports:(id)sender {
+
+}
 
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -154,6 +173,5 @@
     return YES;
 }
 
-- (IBAction)viewReports:(id)sender {
-}
+
 @end
