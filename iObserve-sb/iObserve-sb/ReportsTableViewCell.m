@@ -11,7 +11,7 @@
 
 @implementation ReportsTableViewCell
 
-@synthesize cellNumberLabel, dataPointNumberLabel,detailTextLabel;
+@synthesize cellNumberLabel, dataPointNumberLabel, timestampLabel;
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {

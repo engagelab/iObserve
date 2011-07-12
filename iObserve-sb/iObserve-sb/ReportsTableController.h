@@ -9,14 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "CoreDataTableViewController.h"
 
-@interface ReportsTableController : UITableViewController <NSFetchedResultsControllerDelegate> {
-    NSFetchedResultsController *_fetchedResultsController;
-    NSManagedObjectContext *managedObjectContext;
+@interface ReportsTableController : CoreDataTableViewController {
     NSDateFormatter *formatter;
 }
-
-@property (nonatomic, strong)  NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, retain)  NSFetchedResultsController *fetchedResultsController;
 
 @end
 

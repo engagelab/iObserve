@@ -1,235 +1,102 @@
 //
-//  CoreDataTableViewController.m
+//  ReportsTableController.m
+//  iObserve-sb
 //
-//  Created for Stanford CS193p Spring 2010
+//  Created by Anthony Perritano on 7/5/11.
+//  Copyright 2011 .t. All rights reserved.
 //
 
-#import "CoreDataTableViewController.h"
+#import "ReportsTableController.h"
+#import "ReportsTableViewCell.h"
+#import "iObserve_sbAppDelegate.h"
+#import "Report.h"
 
 @implementation CoreDataTableViewController
 
-@synthesize fetchedResultsController;
-@synthesize titleKey, subtitleKey, searchKey;
+@synthesize fetchedResultsController = _fetchedResultsController;
+@synthesize managedObjectContext;
 
-- (void)createSearchBar
-{
-	if (self.searchKey.length) {
-		if (self.tableView && !self.tableView.tableHeaderView) {
-			UISearchBar *searchBar = [[UISearchBar alloc] init];
-			[[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
-			self.searchDisplayController.searchResultsDelegate = self;
-			self.searchDisplayController.searchResultsDataSource = self;
-			self.searchDisplayController.delegate = self;
-			searchBar.frame = CGRectMake(0, 0, 0, 38);
-			self.tableView.tableHeaderView = searchBar;
-		}
-	} else {
-		self.tableView.tableHeaderView = nil;
-	}
+
+#pragma mark - core data table functions
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[_fetchedResultsController sections] objectAtIndex:section];
+    NSLog(@"section objects %d",[sectionInfo numberOfObjects]);
+    return [sectionInfo numberOfObjects];
 }
 
-- (void)setSearchKey:(NSString *)aKey
-{
-	//[searchKey release];
-	searchKey = [aKey copy];
-	[self createSearchBar];
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section { 
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[_fetchedResultsController sections] objectAtIndex:section];
+    return [sectionInfo name];
 }
 
-- (NSString *)titleKey
-{
-	if (!titleKey) {
-		NSArray *sortDescriptors = [self.fetchedResultsController.fetchRequest sortDescriptors];
-		if (sortDescriptors.count) {
-			return [[sortDescriptors objectAtIndex:0] key];
-		} else {
-			return nil;
-		}
-	} else {
-		return titleKey;
-	}
+
+
+- (void)viewDidUnload {
+    self.fetchedResultsController = nil;
 }
 
-- (void)performFetchForTableView:(UITableView *)tableView
-{
-	NSError *error = nil;
-	[self.fetchedResultsController performFetch:&error];
-	if (error) {
-		NSLog(@"[CoreDataTableViewController performFetchForTableView:] %@ (%@)", [error localizedDescription], [error localizedFailureReason]);
-	}
-	[tableView reloadData];
-}
-
-- (NSFetchedResultsController *)fetchedResultsControllerForTableView:(UITableView *)tableView
-{
-	if (tableView == self.tableView) {
-		if (self.fetchedResultsController.fetchRequest.predicate != normalPredicate) {
-			[NSFetchedResultsController deleteCacheWithName:self.fetchedResultsController.cacheName];
-			self.fetchedResultsController.fetchRequest.predicate = normalPredicate;
-			[self performFetchForTableView:tableView];
-		}
-		//[currentSearchText release];
-		currentSearchText = nil;
-	} else if ((tableView == self.searchDisplayController.searchResultsTableView) && self.searchKey && ![currentSearchText isEqual:self.searchDisplayController.searchBar.text]) {
-		//[currentSearchText release];
-		currentSearchText = [self.searchDisplayController.searchBar.text copy];
-		NSString *searchPredicateFormat = [NSString stringWithFormat:@"%@ contains[c] %@", self.searchKey, @"%@"];
-		NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:searchPredicateFormat, self.searchDisplayController.searchBar.text];
-		[NSFetchedResultsController deleteCacheWithName:self.fetchedResultsController.cacheName];
-		self.fetchedResultsController.fetchRequest.predicate = [NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:searchPredicate, normalPredicate , nil]];
-		[self performFetchForTableView:tableView];
-	}
-	return self.fetchedResultsController;
-}
-
-- (void)searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller
-{
-	// reset the fetch controller for the main (non-searching) table view
-	[self fetchedResultsControllerForTableView:self.tableView];
-}
-
-- (void)setFetchedResultsController:(NSFetchedResultsController *)controller
-{
-	fetchedResultsController.delegate = nil;
-	//[fetchedResultsController release];
-	//fetchedResultsController = [controller retain];
-	controller.delegate = self;
-	//normalPredicate = [self.fetchedResultsController.fetchRequest.predicate retain];
-	if (!self.title) self.title = controller.fetchRequest.entity.name;
-	if (self.view.window) [self performFetchForTableView:self.tableView];
-}
-
-- (UITableViewCellAccessoryType)accessoryTypeForManagedObject:(NSManagedObject *)managedObject
-{
-	return UITableViewCellAccessoryDisclosureIndicator;
-}
-
-- (UIImage *)thumbnailImageForManagedObject:(NSManagedObject *)managedObject
-{
-	return nil;
-}
-
-- (void)configureCell:(UITableViewCell *)cell forManagedObject:(NSManagedObject *)managedObject
-{
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForManagedObject:(NSManagedObject *)managedObject
-{
-    static NSString *ReuseIdentifier = @"CoreDataTableViewCell";
+- (void)viewDidLoad {
+    [super viewDidLoad];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ReuseIdentifier];
-    if (cell == nil) {
-		UITableViewCellStyle cellStyle = self.subtitleKey ? UITableViewCellStyleSubtitle : UITableViewCellStyleDefault;
-        cell = [[UITableViewCell alloc] initWithStyle:cellStyle reuseIdentifier:ReuseIdentifier];
-    }
-	
-	if (self.titleKey) cell.textLabel.text = [managedObject valueForKey:self.titleKey];
-	if (self.subtitleKey) cell.detailTextLabel.text = [managedObject valueForKey:self.subtitleKey];
-	cell.accessoryType = [self accessoryTypeForManagedObject:managedObject];
-	UIImage *thumbnail = [self thumbnailImageForManagedObject:managedObject];
-	if (thumbnail) cell.imageView.image = thumbnail;
-	
-	return cell;
+    NSError *error;
+	if (![[self fetchedResultsController] performFetch:&error]) {
+		// Update to handle the error appropriately.
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		exit(-1);  // Fail
+	}
+    
 }
 
-- (void)managedObjectSelected:(NSManagedObject *)managedObject
-{
-    // Navigation logic may go here. Create and push another view controller.
-    // AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
-    // [self.navigationController pushViewController:anotherViewController];
-    // [anotherViewController release];
-}
 
-- (void)deleteManagedObject:(NSManagedObject *)managedObject
-{
-}
+#pragma mark - Core Data
 
-- (BOOL)canDeleteManagedObject:(NSManagedObject *)managedObject
-{
-	return NO;
-}
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	NSManagedObject *managedObject = [[self fetchedResultsControllerForTableView:tableView] objectAtIndexPath:indexPath];
-	return [self canDeleteManagedObject:managedObject];
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	NSManagedObject *managedObject = [[self fetchedResultsControllerForTableView:tableView] objectAtIndexPath:indexPath];
-	[self deleteManagedObject:managedObject];
-}
-
-#pragma mark UIViewController methods
-
-- (void)viewDidLoad
-{
-	[self createSearchBar];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-	[super viewWillAppear:animated];
-	[self performFetchForTableView:self.tableView];
-}
-
-#pragma mark UITableViewDataSource methods
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return [[[self fetchedResultsControllerForTableView:tableView] sections] count];
-}
-
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
-{
-	return [[self fetchedResultsControllerForTableView:tableView] sectionIndexTitles];
-}
-
-#pragma mark UITableViewDelegate methods
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [[[[self fetchedResultsControllerForTableView:tableView] sections] objectAtIndex:section] numberOfObjects];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{    
-	return [self tableView:tableView cellForManagedObject:[[self fetchedResultsControllerForTableView:tableView] objectAtIndexPath:indexPath]];
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	[self managedObjectSelected:[[self fetchedResultsControllerForTableView:tableView] objectAtIndexPath:indexPath]];
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-	return [[[[self fetchedResultsControllerForTableView:tableView] sections] objectAtIndex:section] name];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
-{
-	return [[self fetchedResultsControllerForTableView:tableView] sectionForSectionIndexTitle:title atIndex:index];
-}
-
-#pragma mark NSFetchedResultsControllerDelegate methods
-
-- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
-{
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+    // The fetch controller is about to start sending change notifications, so prepare the table view for updates.
     [self.tableView beginUpdates];
 }
 
-- (void)controller:(NSFetchedResultsController *)controller
-  didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
-		   atIndex:(NSUInteger)sectionIndex
-	 forChangeType:(NSFetchedResultsChangeType)type
-{	
-    switch(type)
-	{
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+
+    
+}
+
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
+    
+    UITableView *tableView = self.tableView;
+    
+    switch(type) {
+            
+        case NSFetchedResultsChangeInsert:
+            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            // Reloading the section inserts a new row and ensures that titles are updated appropriately.
+            [tableView reloadSections:[NSIndexSet indexSetWithIndex:newIndexPath.section] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+    }
+}
+
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
+    
+    switch(type) {
+            
         case NSFetchedResultsChangeInsert:
             [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;
-			
+            
         case NSFetchedResultsChangeDelete:
             [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
             break;
@@ -237,43 +104,10 @@
 }
 
 
-- (void)controller:(NSFetchedResultsController *)controller
-   didChangeObject:(id)anObject
-	   atIndexPath:(NSIndexPath *)indexPath
-	 forChangeType:(NSFetchedResultsChangeType)type
-	  newIndexPath:(NSIndexPath *)newIndexPath
-{	
-    UITableView *tableView = self.tableView;
-	
-    switch(type)
-	{
-        case NSFetchedResultsChangeInsert:
-            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-            break;
-			
-        case NSFetchedResultsChangeDelete:
-            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            break;
-			
-        case NSFetchedResultsChangeUpdate:
-			[tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            break;
-			
-        case NSFetchedResultsChangeMove:
-            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-            break;
-    }
-}
-
-
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    // The fetch controller has sent all current change notifications, so tell the table view to process all updates.
     [self.tableView endUpdates];
 }
 
 
-
-
 @end
-
