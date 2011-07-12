@@ -14,6 +14,5 @@
 }
 
 
-@property(nonatomic, readwrite) UIImageView *imgView;
 
 @end

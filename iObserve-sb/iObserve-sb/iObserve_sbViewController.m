@@ -8,6 +8,7 @@
 
 #import "iObserve_sbViewController.h"
 #import "iObserve_sbAppDelegate.h"
+#import "ReportsTableController.h"
 
 @implementation iObserve_sbViewController
 @synthesize drawToggleButton;
@@ -36,10 +37,19 @@
     
 }
 
-- (IBAction)viewReports:(id)sender {
-
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([[segue identifier] isEqualToString:@"showReports"] ) {
+        NSLog(@"Showing reports");
+        
+        ReportsTableController *rtc = [segue destinationViewController];
+        
+        iObserve_sbAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+        
+        NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
+        
+        rtc.managedObjectContext = managedObjectContext;
+    }
 }
-
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     if( drawToggle == YES) {

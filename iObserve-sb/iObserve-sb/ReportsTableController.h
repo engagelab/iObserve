@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreDataTableViewController.h"
 
-@interface ReportsTableController : UITableViewController
+@interface ReportsTableController : UITableViewController <NSFetchedResultsControllerDelegate> {
+    NSFetchedResultsController *_fetchedResultsController;
+    NSManagedObjectContext *managedObjectContext;
+    NSDateFormatter *formatter;
+}
+
+@property (nonatomic, strong)  NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain)  NSFetchedResultsController *fetchedResultsController;
 
 @end
+
+
+
+

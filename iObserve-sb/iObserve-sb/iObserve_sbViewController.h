@@ -32,6 +32,4 @@
 
 - (IBAction)newReport:(id)sender;
 
-- (IBAction)viewReports:(id)sender;
-
 @end

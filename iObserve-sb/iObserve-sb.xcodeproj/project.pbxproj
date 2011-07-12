@@ -116,14 +116,11 @@
 		AE1AEFAA13C339130054456B /* report */ = {
 			isa = PBXGroup;
 			children = (
+				AEFF9AC813CB4820009BB653 /* cells */,
 				AEE2E0F213C4533100ECEACC /* ReportDetailsViewController.h */,
 				AEE2E0F313C4533100ECEACC /* ReportDetailsViewController.m */,
 				AE1AEF9F13C30F7B0054456B /* ReportsTableController.h */,
 				AE1AEFA013C30F7B0054456B /* ReportsTableController.m */,
-				AE1AEFAB13C339580054456B /* ReportsTableViewCell.h */,
-				AE1AEFAC13C339580054456B /* ReportsTableViewCell.m */,
-				AE53ECD313C4772B00EE8104 /* ReportDetailTextCellView.h */,
-				AE53ECD413C4772B00EE8104 /* ReportDetailTextCellView.m */,
 			);
 			name = report;
 			sourceTree = "<group>";
@@ -227,6 +224,17 @@
 				AEC781FF13C1F9640041FE77 /* room-map.png */,
 			);
 			name = resources;
+			sourceTree = "<group>";
+		};
+		AEFF9AC813CB4820009BB653 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				AE1AEFAB13C339580054456B /* ReportsTableViewCell.h */,
+				AE1AEFAC13C339580054456B /* ReportsTableViewCell.m */,
+				AE53ECD313C4772B00EE8104 /* ReportDetailTextCellView.h */,
+				AE53ECD413C4772B00EE8104 /* ReportDetailTextCellView.m */,
+			);
+			name = cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
