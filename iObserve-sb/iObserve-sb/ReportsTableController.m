@@ -18,6 +18,8 @@
     if([[segue identifier] isEqualToString:@"showReportDetails"] ) {
         NSLog(@"Showing report details");
         ReportDetailsViewController *rdc = [segue destinationViewController];
+        Report *report = [self.fetchedResultsController objectAtIndexPath:[self.tableView indexPathForSelectedRow]];
+        rdc.report = report;
     }
 }
 
@@ -109,6 +111,12 @@
    
 }
 
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return 
+            ( interfaceOrientation == UIInterfaceOrientationLandscapeLeft || 
+            interfaceOrientation == UIInterfaceOrientationLandscapeRight );
+} 
 
 
 

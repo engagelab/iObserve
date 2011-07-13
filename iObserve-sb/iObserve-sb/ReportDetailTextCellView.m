@@ -10,7 +10,7 @@
 
 @implementation ReportDetailTextCellView
 
-@synthesize textLabel,timeLabel,personLabel,actionLabel;
+@synthesize timeLabel,personLabel,activityLabel,numberLabel;
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {

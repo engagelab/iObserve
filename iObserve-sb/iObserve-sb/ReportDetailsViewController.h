@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Report.h"
+#import "ReportEntry.h"
 
-@interface ReportDetailsViewController : UITableViewController
+@interface ReportDetailsViewController : UITableViewController {
+    
+    Report *report;
+    NSArray *reportEntriesSorted;
+}
+
+@property (nonatomic, retain) Report *report;
+@property (nonatomic, retain) NSArray *reportEntriesSorted;
 
 @end

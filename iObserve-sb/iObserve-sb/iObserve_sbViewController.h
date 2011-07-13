@@ -19,9 +19,11 @@
     UIImageView *drawImageView;
     UIButton *drawToggleButton;
     UIImageView *mapImage;
+    UIButton *settingsButton;
     CGPoint lastPoint;
     
     Report *report;
+    UIPopoverController *popoverController;
     
 }
 @property (nonatomic, strong) IBOutlet UIButton *drawToggleButton;
@@ -29,7 +31,10 @@
 @property (nonatomic, strong) IBOutlet UIImageView *drawImageView;
 
 @property (nonatomic, strong) IBOutlet UIImageView *mapImage;
+@property (nonatomic, strong) IBOutlet UIButton *settingsButton;
+@property (nonatomic, strong)  UIPopoverController *popoverController;
 
 - (IBAction)newReport:(id)sender;
+- (IBAction)showSettingsController:(id)sender;
 
 @end

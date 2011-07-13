@@ -9,11 +9,14 @@
 #import "iObserve_sbViewController.h"
 #import "iObserve_sbAppDelegate.h"
 #import "ReportsTableController.h"
+#import "SettingsViewController.h"
 
 @implementation iObserve_sbViewController
 @synthesize drawToggleButton;
 @synthesize drawImageView;
 @synthesize mapImage;
+@synthesize settingsButton;
+@synthesize popoverController;
 
 
 
@@ -34,6 +37,53 @@
     [appDelegate saveContext];
                                            
     NSLog(@"new report fired");
+    
+}
+
+- (IBAction)showSettingsController:(id)sender {
+    
+    NSLog(@"show settings controller");
+    UIStoryboard *storyb = [UIStoryboard storyboardWithName:@"MainStoryBoard" bundle:nil]; 
+    
+    SettingsViewController *settingsController = [storyb instantiateViewControllerWithIdentifier:@"settingsController"];
+    
+    
+//    UIViewController* popoverContent = [[UIViewController alloc]
+//                                        init];
+    //UIView* popoverView = [[UIView alloc]
+      //                     initWithFrame:CGRectMake(0, 0, 200, 300)];
+   // popoverView.backgroundColor = [UIColor greenColor];
+   // settingsController.view = popoverView;
+    
+    //resize the popover view shown
+    //in the current view to the view's size
+//    settingsController.contentSizeForViewInPopover =
+//    CGSizeMake(200, 300);
+    
+    //create a popover controller
+    self.popoverController = [[UIPopoverController alloc]
+                              initWithContentViewController:settingsController];
+    
+    //present the popover view non-modal with a
+    //refrence to the button pressed within the current view
+    [self.popoverController presentPopoverFromRect:settingsButton.frame
+                                            inView:self.view
+                          permittedArrowDirections:UIPopoverArrowDirectionAny
+                                          animated:YES];
+    
+//    
+    NSLog(@"show settings controller");
+//    UIStoryboard *storyb = [UIStoryboard storyboardWithName:@"MainStoryBoard" bundle:nil]; 
+    
+//    UIViewController *settingsController = [storyb instantiateViewControllerWithIdentifier:@"settingsController"];
+//    
+//    UIPopoverController *popover = [[UIPopoverController alloc] initWithContentViewController:settingsController];
+//   // [popover setPopoverContentSize:CGSizeMake(320, 500) animated:YES];
+   
+
+    
+//    [popover presentPopoverFromRect:settingsButton.frame inView:self.view
+//                     permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     
 }
 
@@ -144,15 +194,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
+
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewDidUnload
 {
     
-    
     [self setDrawToggleButton:nil];
+    settingsButton = nil;
+    [self setSettingsButton:nil];
     [super viewDidUnload];
+    
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }

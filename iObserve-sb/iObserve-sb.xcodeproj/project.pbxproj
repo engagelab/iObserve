@@ -35,6 +35,7 @@
 		AE74D48913C0F29200FD8E11 /* iObserve_sbViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = AE74D48813C0F29200FD8E11 /* iObserve_sbViewController.h */; };
 		AE74D48B13C0F29200FD8E11 /* iObserve_sbViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE74D48A13C0F29200FD8E11 /* iObserve_sbViewController.m */; };
 		AE7D2B7813C49DF200594BC3 /* DrawImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7D2B7713C49DF200594BC3 /* DrawImageView.m */; };
+		AE91EA9013CDB3D400AE5FE7 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE91EA8F13CDB3D400AE5FE7 /* SettingsViewController.m */; };
 		AEC7820013C1F9640041FE77 /* room-map.png in Resources */ = {isa = PBXBuildFile; fileRef = AEC781FF13C1F9640041FE77 /* room-map.png */; };
 		AEE2E0F413C4533100ECEACC /* ReportDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE2E0F313C4533100ECEACC /* ReportDetailsViewController.m */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,8 @@
 		AE74D48A13C0F29200FD8E11 /* iObserve_sbViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iObserve_sbViewController.m; sourceTree = "<group>"; };
 		AE7D2B7613C49DF200594BC3 /* DrawImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawImageView.h; sourceTree = "<group>"; };
 		AE7D2B7713C49DF200594BC3 /* DrawImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawImageView.m; sourceTree = "<group>"; };
+		AE91EA8E13CDB3D400AE5FE7 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = "iObserve-sb/SettingsViewController.h"; sourceTree = "<group>"; };
+		AE91EA8F13CDB3D400AE5FE7 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = "iObserve-sb/SettingsViewController.m"; sourceTree = "<group>"; };
 		AEC781FF13C1F9640041FE77 /* room-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "room-map.png"; sourceTree = "<group>"; };
 		AEE2E0F213C4533100ECEACC /* ReportDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportDetailsViewController.h; sourceTree = "<group>"; };
 		AEE2E0F313C4533100ECEACC /* ReportDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportDetailsViewController.m; sourceTree = "<group>"; };
@@ -135,7 +138,7 @@
 			name = init;
 			sourceTree = "<group>";
 		};
-		AE2BB0A313C71F1B00C0E8C8 /* Entities */ = {
+		AE2BB0A313C71F1B00C0E8C8 /* entities */ = {
 			isa = PBXGroup;
 			children = (
 				AE2BB0AA13C71F9200C0E8C8 /* Group.h */,
@@ -154,7 +157,7 @@
 				AE16479713CB255100BA9B41 /* Person.h */,
 				AE16479813CB255100BA9B41 /* Person.m */,
 			);
-			name = Entities;
+			name = entities;
 			sourceTree = "<group>";
 		};
 		AE74D46413C0F29100FD8E11 = {
@@ -188,15 +191,16 @@
 		AE74D47913C0F29200FD8E11 /* iObserve-sb */ = {
 			isa = PBXGroup;
 			children = (
+				AE7CD4E113CDB2750010D2C0 /* settings */,
 				AE16477213CB1FE000BA9B41 /* util */,
-				AE2BB0A313C71F1B00C0E8C8 /* Entities */,
-				AE2BB07013C7171D00C0E8C8 /* init */,
+				AE2BB0A313C71F1B00C0E8C8 /* entities */,
 				AE1AEFAA13C339130054456B /* report */,
 				AE74D48513C0F29200FD8E11 /* MainStoryboard.storyboard */,
 				AE7D2B7613C49DF200594BC3 /* DrawImageView.h */,
 				AE7D2B7713C49DF200594BC3 /* DrawImageView.m */,
 				AE74D48813C0F29200FD8E11 /* iObserve_sbViewController.h */,
 				AE74D48A13C0F29200FD8E11 /* iObserve_sbViewController.m */,
+				AE2BB07013C7171D00C0E8C8 /* init */,
 				AE74D47A13C0F29200FD8E11 /* Supporting Files */,
 			);
 			path = "iObserve-sb";
@@ -211,6 +215,16 @@
 				AE74D47F13C0F29200FD8E11 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AE7CD4E113CDB2750010D2C0 /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				AE91EA8E13CDB3D400AE5FE7 /* SettingsViewController.h */,
+				AE91EA8F13CDB3D400AE5FE7 /* SettingsViewController.m */,
+			);
+			name = settings;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		AEC781FD13C1F93C0041FE77 /* resources */ = {
@@ -323,6 +337,7 @@
 				AE16479313CB255100BA9B41 /* Map.m in Sources */,
 				AE16479613CB255100BA9B41 /* Report.m in Sources */,
 				AE16479913CB255100BA9B41 /* Person.m in Sources */,
+				AE91EA9013CDB3D400AE5FE7 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

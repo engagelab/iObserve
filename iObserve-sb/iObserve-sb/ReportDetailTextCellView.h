@@ -10,15 +10,17 @@
 
 @interface ReportDetailTextCellView : UITableViewCell {
     UIImageView *cellIcon;
+    UILabel *numberLabel;
     UILabel *timeLabel;
     UILabel *personLabel;
-    UILabel *actionLabel;
+    UILabel *activityLabel;
 }
 
 @property (nonatomic, retain) IBOutlet UIImageView *cellIcon;
+@property (nonatomic, retain) IBOutlet UILabel *numberLabel;
 @property (nonatomic, retain) IBOutlet UILabel *timeLabel;
 @property (nonatomic, retain) IBOutlet UILabel *personLabel;
-@property (nonatomic, retain) IBOutlet UILabel *actionLabel;
+@property (nonatomic, retain) IBOutlet UILabel *activityLabel;
 
 @end
 
