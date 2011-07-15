@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsViewController : UIViewController
+@interface SettingsViewController : UIViewController <UIImagePickerControllerDelegate> {
+    UILabel *mapNameLabel;
+    UIImagePickerController *picker;
+    NSUserDefaults *standardUserDefaults;
+    UIImage *savedImage;
+}
+@property (nonatomic, strong) IBOutlet UILabel *mapNameLabel;
 
 @end

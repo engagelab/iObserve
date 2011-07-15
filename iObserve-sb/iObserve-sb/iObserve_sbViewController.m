@@ -10,6 +10,8 @@
 #import "iObserve_sbAppDelegate.h"
 #import "ReportsTableController.h"
 #import "SettingsViewController.h"
+#import "ImagePickerViewController.h"
+#import "MapImage.h"
 
 @implementation iObserve_sbViewController
 @synthesize drawToggleButton;
@@ -20,11 +22,25 @@
 
 
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
+
+#pragma mark - Actions
+
+- (IBAction)changeMapImage:(id)sender {
+    
+    picker = [[ImagePickerViewController alloc] init];
+    
+    picker.delegate = self;
+    
+    
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    //picker.modalPresentationStyle=UIModalPresentationPageSheet;
+    
+    
+    [self presentModalViewController:picker animated:YES];
+    
 }
+
 
 - (IBAction)newReport:(id)sender {
     
@@ -57,16 +73,17 @@
     
     //resize the popover view shown
     //in the current view to the view's size
-//    settingsController.contentSizeForViewInPopover =
-//    CGSizeMake(200, 300);
+    settingsController.contentSizeForViewInPopover = CGSizeMake(300, 200);
     
     //create a popover controller
-    self.popoverController = [[UIPopoverController alloc]
+    popoverController = [[UIPopoverController alloc]
                               initWithContentViewController:settingsController];
+    
+    popoverController.delegate = self;
     
     //present the popover view non-modal with a
     //refrence to the button pressed within the current view
-    [self.popoverController presentPopoverFromRect:settingsButton.frame
+    [popoverController presentPopoverFromRect:settingsButton.frame
                                             inView:self.view
                           permittedArrowDirections:UIPopoverArrowDirectionAny
                                           animated:YES];
@@ -98,8 +115,51 @@
         NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
         
         rtc.managedObjectContext = managedObjectContext;
+    } else if([[segue identifier] isEqualToString:@"popSettings"] ) {
+        UIStoryboardPopoverSegue *popoverSegue = (UIStoryboardPopoverSegue *)segue;
+        UIPopoverController *thePopoverController = [popoverSegue popoverController];
+        thePopoverController.contentViewController.contentSizeForViewInPopover = CGSizeMake(300.0f, 200.0f);        
+        [thePopoverController setDelegate:self];
+        self.popoverController = thePopoverController;
     }
 }
+
+- (IBAction)DrawToggle:(id)sender {
+    drawToggle = !drawToggle;
+    NSLog(@"Draw toggle %d", drawToggle);
+    if(drawToggle == YES) {
+        [drawToggleButton setTitle:@"Drawing is On" forState:UIControlStateNormal];
+        
+    } else {
+        [drawToggleButton setTitle:@"Drawing is Off" forState:UIControlStateNormal];
+        
+    }
+}
+
+#pragma mark - Image Picker Delegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+	[picker dismissModalViewControllerAnimated:YES];
+    
+    UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    
+    iObserve_sbAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    
+    NSManagedObjectContext *managedObjectContext = [appDelegate managedObjectContext];
+    
+    [MapImage mapImageWithImage:image WithInManagedObjectContext:managedObjectContext]; 
+    
+    [appDelegate saveContext];
+    
+    
+    mapImage.image = image;
+    
+    NSLog(@"image saved fired");
+    
+	//imageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+}
+
+#pragma mark - Touches
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     if( drawToggle == YES) {
@@ -115,18 +175,6 @@
         lastPoint.y -= 20;
     }
 }
-- (IBAction)DrawToggle:(id)sender {
-    drawToggle = !drawToggle;
-    NSLog(@"Draw toggle %d", drawToggle);
-    if(drawToggle == YES) {
-        [drawToggleButton setTitle:@"Drawing is On" forState:UIControlStateNormal];
-
-    } else {
-        [drawToggleButton setTitle:@"Drawing is Off" forState:UIControlStateNormal];
-
-    }
-}
-
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     if( drawToggle == YES) {
@@ -187,20 +235,16 @@
     }
 }
 
-
-
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
 
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     
     [self setDrawToggleButton:nil];
     settingsButton = nil;
@@ -211,31 +255,30 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
+//- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
+//    
+//   
+//    SettingsViewController *p =  (SettingsViewController *)[self.popoverController contentViewController];
+//    
+//    UIImage *i = p.savedImage;
+//    
+//    NSLog(@"got it");
+//}
+//
+//- (BOOL)popoverControllerShouldDismissPopover:(UIPopoverController *)popoverController {
+//    
+//    
+//    NSLog(@"got it");
+//    return YES;
+//}
+#pragma mark - Orientation
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return YES;
-}
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return 
+    ( interfaceOrientation == UIInterfaceOrientationLandscapeLeft || 
+     interfaceOrientation == UIInterfaceOrientationLandscapeRight );
+} 
 
 
 @end

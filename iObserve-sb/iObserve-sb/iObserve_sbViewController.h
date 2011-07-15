@@ -10,7 +10,7 @@
 #import "DrawImageView.h"
 #import "Report.h"
 
-@interface iObserve_sbViewController : UIViewController {
+@interface iObserve_sbViewController : UIViewController <UIPopoverControllerDelegate,UIImagePickerControllerDelegate>{
     
     BOOL drawToggle;	
 	BOOL mouseSwiped;	
@@ -24,6 +24,7 @@
     
     Report *report;
     UIPopoverController *popoverController;
+    UIImagePickerController *picker;
     
 }
 @property (nonatomic, strong) IBOutlet UIButton *drawToggleButton;
@@ -36,5 +37,7 @@
 
 - (IBAction)newReport:(id)sender;
 - (IBAction)showSettingsController:(id)sender;
+- (IBAction)changeMapImage:(id)sender;
+
 
 @end

@@ -7,8 +7,12 @@
 //
 
 #import "SettingsViewController.h"
+#import "ImagePickerViewController.h"
+#import "MapImage.h"
+#import "iObserve_sbAppDelegate.h"
 
 @implementation SettingsViewController
+@synthesize mapNameLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,26 +33,23 @@
 
 #pragma mark - View lifecycle
 
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
-{
-}
-*/
-
-
-#pragma mark - View lifecycle
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
     
+    standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    
+    // getting an NSString object
+    NSString *roomMapName = [standardUserDefaults stringForKey:@"room-map"];
+    
+    mapNameLabel.text = roomMapName;
+        
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewDidUnload
 {
+    [self setMapNameLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
